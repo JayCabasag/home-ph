@@ -7,7 +7,9 @@ interface MainLayoutProps {
 
 function MainLayout({ children }: MainLayoutProps) {
   return (
-    <Navbar children={children} />
+    <Navbar>
+      {children}
+    </Navbar>
   )
 }
 
