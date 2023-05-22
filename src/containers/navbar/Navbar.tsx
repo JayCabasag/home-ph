@@ -13,7 +13,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { COLORS } from '@/utils/app_constants';
+import { COLORS, MD_NAVBAR_HEIGHT, XS_NAVBAR_HEIGHT } from '@/utils/app_constants';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
@@ -50,7 +50,7 @@ export default function Navbar(props: Props) {
             color: COLORS.BLACK
         }}
       >
-        Home.ph
+        HOME.PH
       </Typography>
       <Divider />
       <List>
@@ -66,7 +66,7 @@ export default function Navbar(props: Props) {
                         textTransform: 'capitalize',
                         fontFamily: 'Inter',
                         color: isActive ? COLORS.BLACK : COLORS.INACTIVE_GRAY,
-                        fontSize: { sm: '16px', md: '21px' },
+                        fontSize: { sm: '16px', md: '18px' },
                         fontWeight: 600,
                         lineHeight: '25px',
                         textAlign: 'left',
@@ -99,7 +99,7 @@ export default function Navbar(props: Props) {
             boxShadow: 'none',
             paddingLeft: { sm: '0px', md: '115px'},
             paddingRight: { sm: '0px', md: '115px'},
-            height: { sm: '70px', md: '98px'},
+            height: { sm: XS_NAVBAR_HEIGHT, md: MD_NAVBAR_HEIGHT},
             display: 'flex',
             justifyContent: 'center'
         }}
@@ -121,14 +121,13 @@ export default function Navbar(props: Props) {
             component="div"
             sx={{
                 flexGrow: 1, display: { sm: 'none', md: 'block' },
-                fontSize: { sm: '25px', md: '43px' },
-                fontWeight: 700,
-                lineHeight: '52px',
+                fontSize: { sm: '25px', md: '30px' },
+                fontWeight: 900,
                 textAlign: 'left',
                 color: COLORS.BLACK
             }}
           >
-            HOME.ph
+            HOME.PH
           </Typography>
           <Box sx={{ display: { xs: 'none', md: 'block' } }}>
           <List sx={{
@@ -147,7 +146,7 @@ export default function Navbar(props: Props) {
                         textTransform: 'capitalize',
                         fontFamily: 'Inter',
                         color: isActive ? COLORS.BLACK : COLORS.INACTIVE_GRAY,
-                        fontSize: { sm: '16px', md: '21px' },
+                        fontSize: { sm: '16px', md: '17px' },
                         fontWeight: 600,
                         lineHeight: '25px',
                         textAlign: 'left',
@@ -174,12 +173,12 @@ export default function Navbar(props: Props) {
                 textTransform: 'capitalize',
                 fontFamily: 'Inter',
                 color: COLORS.BLACK,
-                fontSize: { sm: '16px', md: '21px' },
+                fontSize: { sm: '16px', md: '17px' },
                 fontWeight: 600,
                 lineHeight: '25px',
                 textAlign: 'left',
                 width: { sm: '40px', md: '157px' },
-                height: { sm: '20px', md: '56.32px' },
+                height: { sm: '20px', md: '45px' },
                 ':hover': {
                     backgroundColor: 'unset'
                 },
@@ -192,12 +191,12 @@ export default function Navbar(props: Props) {
               sx={{
                 textTransform: 'capitalize',
                 fontFamily: 'Inter',
-                fontSize: { sm: '16px', md: '21px' },
+                fontSize: { sm: '16px', md: '17px' },
                 fontWeight: 600,
                 lineHeight: '25px',
                 textAlign: 'left',
                 width: { sm: '40px', md: '157px' },
-                height: { sm: '20px', md: '56.32px' },
+                height: { sm: '20px', md: '45px' },
                 borderRadius: '15px'
               }}
             >
@@ -225,7 +224,7 @@ export default function Navbar(props: Props) {
       </Box>
       <Box component="main" width={'100%'}>
         <Toolbar sx={{
-            height: { sm: '70px', md: '98px'},
+            height: { xs: XS_NAVBAR_HEIGHT, md: MD_NAVBAR_HEIGHT},
         }}/>
         {props.children}
       </Box>
