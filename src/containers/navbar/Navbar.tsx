@@ -11,6 +11,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { Fade } from '@mui/material'
 import { COLORS, MD_NAVBAR_HEIGHT, XS_NAVBAR_HEIGHT } from '@/utils/app_constants';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -88,6 +89,7 @@ export default function Navbar(props: Props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
+    <Fade in={true} timeout={300}>
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar
@@ -227,5 +229,6 @@ export default function Navbar(props: Props) {
         {props.children}
       </Box>
     </Box>
+    </Fade>
   );
 }
