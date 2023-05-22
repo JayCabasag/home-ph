@@ -1,7 +1,6 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
@@ -11,24 +10,20 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { Fade } from '@mui/material'
 import { COLORS, MD_NAVBAR_HEIGHT, XS_NAVBAR_HEIGHT } from '@/utils/app_constants';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window?: () => Window;
-  children: React.ReactNode
+
+interface NavbarProps {
+    window?: () => Window;
 }
+
 
 const drawerWidth = 240;
 const navItems = [{ name: 'Home', path: '/' }, { name: 'Featured', path: '/featured' }, { name: 'Properties', path: '/properties' }, { name: 'About us', path: '/about-us' }];
 
-export default function Navbar(props: Props) {
+function Navbar( props : NavbarProps) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const router = useRouter()
@@ -89,9 +84,7 @@ export default function Navbar(props: Props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Fade in={true} timeout={300}>
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
+    <Box>
       <AppBar
         component="nav"
         sx={{
@@ -222,13 +215,8 @@ export default function Navbar(props: Props) {
           {drawer}
         </Drawer>
       </Box>
-      <Box component="main" width={'100%'}>
-        <Toolbar sx={{
-            height: { xs: XS_NAVBAR_HEIGHT, md: MD_NAVBAR_HEIGHT},
-        }}/>
-        {props.children}
-      </Box>
     </Box>
-    </Fade>
-  );
+  )
 }
+
+export default Navbar

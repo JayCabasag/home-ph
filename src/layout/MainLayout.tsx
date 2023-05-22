@@ -1,16 +1,26 @@
-import Navbar from '@/containers/navbar/Navbar'
-import React, { ReactNode } from 'react'
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import { Fade } from '@mui/material'
+import { MD_NAVBAR_HEIGHT, XS_NAVBAR_HEIGHT } from '@/utils/app_constants';
+import Navbar from '@/containers/navbar/Navbar';
 
 interface MainLayoutProps {
-    children: ReactNode
+  children: React.ReactNode
 }
 
-function MainLayout({ children }: MainLayoutProps) {
+export default function MainLayout(props: MainLayoutProps) {
   return (
-    <Navbar>
-      {children}
-    </Navbar>
-  )
+    <Fade in={true} timeout={300}>
+    <Box sx={{ display: 'flex' }}>
+      <Navbar  />
+      <Box component="main" width={'100%'}>
+        <Toolbar sx={{
+            height: { xs: XS_NAVBAR_HEIGHT, md: MD_NAVBAR_HEIGHT},
+        }}/>
+        {props.children}
+      </Box>
+    </Box>
+    </Fade>
+  );
 }
-
-export default MainLayout
