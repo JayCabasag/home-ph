@@ -92,7 +92,7 @@ function Navbar( props : NavbarProps) {
             boxShadow: 'none',
             paddingLeft: { sm: '0px', md: '115px'},
             paddingRight: { sm: '0px', md: '115px'},
-            height: { sm: XS_NAVBAR_HEIGHT, md: MD_NAVBAR_HEIGHT},
+            height: { xs: XS_NAVBAR_HEIGHT, md: MD_NAVBAR_HEIGHT},
             display: 'flex',
             justifyContent: 'center'
         }}

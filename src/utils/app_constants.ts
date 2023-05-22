@@ -21,4 +21,4 @@ export const USER_LOAD_PER_REFRESH = 50
 export const GOOGLE_DOCS_PLAYER = 'http://docs.google.com/gview?embedded=true&url='
 
 export const MD_NAVBAR_HEIGHT = '80px'
-export const XS_NAVBAR_HEIGHT = '60px'
+export const XS_NAVBAR_HEIGHT = '65px'
