@@ -4,13 +4,17 @@ import { Box, Button, Typography, useMediaQuery } from '@mui/material'
 import { COLORS, MD_NAVBAR_HEIGHT } from '@/utils/app_constants'
 import Image from 'next/image'
 import SectionWrapper from '@/components/wrappers/PageWrapper'
+import DiscoverCard from '@/components/cards/DiscoverCards'
 
-const inter = Inter({ subsets: ['latin'] })
 const partnership = ['/assets/traveloka.png', '/assets/pegipegi.png', '/assets/ticket-com.png']
+const discoveries = [
+  { total: '15K+', message: 'Happy customer with our service' },
+  { total: '185K+', message: 'The best property we provide' },
+  { total: '367K+', message: 'Companies affiliated with us' },
+  { total: '567K+', message: 'Project completed' }
+]
 
 export default function Home() {
-
-  const isMobileScreen = useMediaQuery('(max-width: 768px)');
 
   return (
     <>
@@ -117,6 +121,7 @@ export default function Home() {
       <SectionWrapper>
       <Box
         sx={{
+          paddingTop: { xs: '15px', md: '0px' },
           width: { xs: '100%', md: '50%' },
           height: { xs: 'calc(100vh - 250px)', md: `calc(100vh - ${MD_NAVBAR_HEIGHT})`},
           display: 'flex',
@@ -206,7 +211,105 @@ export default function Home() {
         </Button>
        </Box>
       </SectionWrapper>
-          
+      <SectionWrapper>
+      <Box
+        sx={{
+          width: { xs: '100%', md: '50%' },
+          padding: '20px 0',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          paddingLeft: { sm: '0px', md: '90px'},
+        }}
+       >
+        <Typography
+          sx={{
+            fontFamily: 'Inter',
+            fontStyle: 'normal',
+            fontWeight: 600,
+            fontSize: { xs: '40px', md: '60px' },
+            lineHeight: { xs: '50px', md: '73px' },
+            color: COLORS.BLACK,
+          }}
+        >
+          Discover your 
+          <br />
+          dream home with us
+        </Typography>
+
+        <Typography
+          sx={{
+            width: { xs: 'auto', md: '70%' },
+            fontFamily: 'Inter',
+            fontStyle: 'normal',
+            fontWeight: 500,
+            fontSize: { xs: '14px', md: '17px' },
+            lineHeight: '27px',
+            marginTop: '31px',
+            color: COLORS.GRAY
+          }}
+        >
+          We are please to offer house listing services and provide various options and packages to assist you in finding your dream home.
+        </Typography>
+        <Box
+          sx={{
+            marginTop:  { xs: '34px', md: '82px' },
+            display: { xs: 'flex', md: 'grid'},
+            flexDirection: 'column',
+            gridTemplateColumns: '1fr 1fr', // Two columns with equal width
+            width: 'max-content',
+            columnGap: '134px'
+          }}
+        >
+          {discoveries.map((discover, index) => {
+            return <DiscoverCard key={index} total={discover.total} message={discover.message}/>
+          })}
+        </Box>
+        <Button
+          variant='contained'
+          sx={{
+            marginTop: { xs: '34px', md: '54px' },
+            textTransform: 'capitalize',
+            fontFamily: 'Inter',
+            fontStyle: 'normal',
+            fontSize: { sm: '16px', md: '17px' },
+            fontWeight: 600,
+            lineHeight: '25px',
+            textAlign: 'left',
+            width: { sm: '40px', md: '165px' },
+            height: { sm: '20px', md: '45px' },
+            borderRadius: '15px'
+          }}
+        >
+          See more
+        </Button>
+       </Box>
+      <Box
+        sx={{
+          width: { xs: '100%', md: '50%' },
+          height: { xs: 'calc(100vh - 250px)', md: `calc(100vh - ${MD_NAVBAR_HEIGHT})`},
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent:'center'
+        }}
+       >
+        <Box 
+          sx={{
+            width: { xs: '100%', md: '603px'},
+            height: { xs: '100%', md: '707px'},
+            position: 'relative', // Set the Box position to relative
+            overflow: 'hidden' // Hide any overflow from the Image
+          }}
+        >
+          <Image
+            fill
+            src='/assets/main3.png'
+            alt='main'
+          />
+        </Box>
+       </Box>
+      </SectionWrapper>
+
     </>
   )
 }
