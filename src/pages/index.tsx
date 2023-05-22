@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import { Button,Box, Container, Typography } from '@mui/material'
+import { Button,Box, Container, Typography, useMediaQuery } from '@mui/material'
 import { COLORS, MD_NAVBAR_HEIGHT } from '@/utils/app_constants'
 import Image from 'next/image'
 
@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ['latin'] })
 const partnership = ['/assets/traveloka.png', '/assets/pegipegi.png', '/assets/ticket-com.png']
 
 export default function Home() {
+
+  const isMobileScreen = useMediaQuery('(max-width: 768px)');
+
   return (
     <>
       <Head>
@@ -19,13 +22,14 @@ export default function Home() {
       <Container
         className={inter.className}
         sx={{
-          backgroundColor: COLORS.DIRTY_WHITE,
+          backgroundColor: COLORS.WHITE,
           width: '100%',
           height: { xs: 'auto', md: `calc(100vh - ${MD_NAVBAR_HEIGHT})`},
           display: 'flex',
           flexDirection: { xs: 'column', md: 'row' }
         }}
         maxWidth={false}
+        disableGutters={!isMobileScreen}
       >
        <Box
         sx={{
@@ -42,61 +46,41 @@ export default function Home() {
             fontFamily: 'Inter',
             fontStyle: 'normal',
             fontWeight: 600,
-            fontSize: { xs: '50px', md: '66px' },
+            fontSize: { xs: '40px', md: '66px' },
             lineHeight: { xs: '50px', md: '80px' },
             color: COLORS.BLACK,
           }}
         >
           Let&apos;s start
-        </Typography>
-        <Typography
-          sx={{
-            fontFamily: 'Inter',
-            fontStyle: 'normal',
-            fontWeight: 600,
-            fontSize: { xs: '50px', md: '66px' },
-            lineHeight: { xs: '50px', md: '80px' },
-            color: COLORS.BLACK,
-          }}
-        >
+          <br />
           the search for your
-        </Typography>
-        <Typography
-          sx={{
-            fontFamily: 'Inter',
-            fontStyle: 'normal',
-            fontWeight: 600,
-            fontSize: { xs: '50px', md: '66px' },
-            lineHeight: { xs: '50px', md: '80px' },
-            color: COLORS.BLACK,
-          }}
-        >
+          <br />
           dream home!
         </Typography>
 
         <Typography
           sx={{
+            width: { xs: 'auto', md: '70%' },
             fontFamily: 'Inter',
             fontStyle: 'normal',
             fontWeight: '600',
-            fontSize: { xs: '15', md: '17px' },
+            fontSize: { xs: '14px', md: '17px' },
             lineHeight: '27px',
             marginTop: '31px',
             color: COLORS.GRAY
           }}
         >
-        Your dream home awaits. This stunning property features all 
-        <br />
+        Your dream home awaits. This stunning property features all
         the amenities and comfort you desire.
         </Typography>
 
         <Typography
           sx={{
-            marginTop: { xs: '60px', md: '117px' },
+            marginTop: { xs: '50px', md: '117px' },
             fontFamily: 'Inter',
             fontStyle: 'normal',
             fontWeight: 600,
-            fontSize: '18px',
+            fontSize: { xs: '14px', md: '18px' },
             lineHeight: '28px',
             color: '#43404B'
           }}
