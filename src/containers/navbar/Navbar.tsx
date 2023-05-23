@@ -39,7 +39,7 @@ function Navbar( props : NavbarProps) {
         variant="h6"
         sx={{ 
             my: 2,
-            fontSize: { ms: '25px', md: '43px' },
+            fontSize: { sm: '25px', md: '43px' },
             fontWeight: 700,
             color: COLORS.BLACK
         }}
@@ -103,7 +103,7 @@ function Navbar( props : NavbarProps) {
             edge="start"
             onClick={handleDrawerToggle}
             sx={{
-                mr: 2, display: { sm: 'none' },
+                mr: 2, display: { xs: 'flex', sm: 'flex', md: 'none' },
                 color: COLORS.BROWN
             }}
           >
@@ -113,8 +113,9 @@ function Navbar( props : NavbarProps) {
             variant="h6"
             component="div"
             sx={{
-                flexGrow: 1, display: { sm: 'none', md: 'block' },
-                fontSize: { sm: '25px', md: '30px' },
+                flexGrow: 1,
+                display: 'flex',
+                fontSize: { xs: '18px', sm: '25px', md: '30px' },
                 fontWeight: 900,
                 textAlign: 'left',
                 color: COLORS.BLACK
@@ -122,7 +123,7 @@ function Navbar( props : NavbarProps) {
           >
             HOME.PH
           </Typography>
-          <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+          <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}>
           <List sx={{
             display: 'flex',
             color: COLORS.BLACK
@@ -158,7 +159,7 @@ function Navbar( props : NavbarProps) {
             })}
           </List>
           </Box>
-          <Box sx={{ display: { sm: 'none', md: 'block' } }}>
+          <Box sx={{ display: 'flex' }}>
             <Button
               variant='text'
               disableRipple
@@ -170,8 +171,8 @@ function Navbar( props : NavbarProps) {
                 fontWeight: 600,
                 lineHeight: '25px',
                 textAlign: 'left',
-                width: { sm: '40px', md: '157px' },
-                height: { sm: '20px', md: '45px' },
+                minWidth: { xs: 'max-content', sm: '40px', md: '157px' },
+                height: { xs: '40px',sm: '40px', md: '45px' },
                 ':hover': {
                     backgroundColor: 'unset'
                 },
@@ -188,8 +189,8 @@ function Navbar( props : NavbarProps) {
                 fontWeight: 600,
                 lineHeight: '25px',
                 textAlign: 'left',
-                width: { sm: '40px', md: '157px' },
-                height: { sm: '20px', md: '45px' },
+                minWidth: { xs: 'max-content', sm: '40px', md: '157px' },
+                height: { xs: '40px', sm: '40px', md: '45px' },
                 borderRadius: '15px'
               }}
             >

@@ -4,7 +4,7 @@ import { COLORS } from './app_constants'
 const theme = createTheme({
   breakpoints: {
     values: {
-      xs: 375,
+      xs: 0,
       sm: 800,
       md: 960,
       lg: 1280,
