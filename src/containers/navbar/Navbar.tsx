@@ -65,7 +65,7 @@ function Navbar( props : NavbarProps) {
                         lineHeight: '25px',
                         textAlign: 'left',
                         width: drawerWidth,
-                        height: { sm: '20px', md: '56.32px' },
+                        height: { xs: '20px', sm: '20px', md: '56.32px', ld: '56.32px' },
                         ':hover': {
                             backgroundColor: 'unset'
                         },
