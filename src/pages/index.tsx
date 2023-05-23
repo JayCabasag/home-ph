@@ -202,8 +202,9 @@ export default function Home() {
             fontWeight: 600,
             lineHeight: '25px',
             textAlign: 'left',
-            width: { sm: '40px', md: '165px' },
-            height: { sm: '20px', md: '45px' },
+            width: { xs: '40px', sm: '40px', md: '95px', lg: '157px' },
+            minWidth: 'max-content',
+            height: { xs: '40px', sm: '40px', md: '45px' },
             borderRadius: '15px'
           }}
         >
@@ -276,8 +277,9 @@ export default function Home() {
             fontWeight: 600,
             lineHeight: '25px',
             textAlign: 'left',
-            width: { sm: '40px', md: '165px' },
-            height: { sm: '20px', md: '45px' },
+            width: { xs: '40px', sm: '40px', md: '95px', lg: '157px' },
+            height: { xs: '40px', sm: '40px', md: '45px' },
+            minWidth: 'max-content',
             borderRadius: '15px'
           }}
         >

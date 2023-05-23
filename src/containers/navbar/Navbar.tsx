@@ -90,8 +90,8 @@ function Navbar( props : NavbarProps) {
         sx={{
             backgroundColor: COLORS.WHITE,
             boxShadow: 'none',
-            paddingLeft: { sm: '0px', md: '115px'},
-            paddingRight: { sm: '0px', md: '115px'},
+            paddingLeft: { xs: '0px', sm: '0px', md: '60px', lg: '115px'},
+            paddingRight: { xs: '0px', sm: '0px', md: '60px', lg: '115px'},
             height: { xs: XS_NAVBAR_HEIGHT, md: MD_NAVBAR_HEIGHT},
             display: 'flex',
             justifyContent: 'center'
@@ -123,7 +123,7 @@ function Navbar( props : NavbarProps) {
           >
             HOME.PH
           </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}>
+          <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex' }}}>
           <List sx={{
             display: 'flex',
             color: COLORS.BLACK
@@ -144,8 +144,8 @@ function Navbar( props : NavbarProps) {
                         fontWeight: 600,
                         lineHeight: '25px',
                         textAlign: 'left',
-                        width: { sm: '40px', md: '157px' },
-                        height: { sm: '20px', md: '56.32px' },
+                        width: { xs: '40px', sm: '40px', md: '95px', lg: '157px' },
+                        height: 'auto',
                         ':hover': {
                             backgroundColor: 'unset'
                         },
