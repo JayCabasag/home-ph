@@ -5,8 +5,9 @@ import { COLORS, MD_NAVBAR_HEIGHT } from '@/utils/app_constants'
 import Image from 'next/image'
 import SectionWrapper from '@/components/wrappers/PageWrapper'
 import DiscoverCard from '@/components/cards/DiscoverCard'
-import { properties } from '@/utils/tests'
+import { properties, testimonials } from '@/utils/tests'
 import ResidentCard from '@/components/cards/ResidentCard'
+import TestimonialCard from '@/components/cards/TestimonialCard'
 
 const partnership = ['/assets/traveloka.png', '/assets/pegipegi.png', '/assets/ticket-com.png']
 const discoveries = [
@@ -373,6 +374,70 @@ export default function Home() {
         >
           {properties.map((property, index) => {
             return <ResidentCard property={property}  key={index} />
+          })}
+        </Box>
+      </Box>
+      </SectionWrapper>
+      <SectionWrapper heightAuto>
+      <Box sx={{ width: '100%' }}>
+        <Box
+          sx={{
+            width: '100%',
+            padding: '20px 0',
+            height: 'max-content',
+            paddingLeft: { sm: '0px', md: '90px'},
+            paddingRight: { sm: '0px', md: '90px'},
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between'
+          }}
+        >
+          <Typography
+            sx={{
+              fontFamily: 'Inter',
+              fontStyle: 'normal',
+              fontWeight: 600,
+              fontSize: { xs: '40px', md: '60px' },
+              lineHeight: { xs: '50px', md: '73px' },
+              color: COLORS.BLACK,
+            }}
+          >
+            Our Customer Testimonials
+          </Typography>
+          <Button
+            variant='contained'
+            sx={{
+              textTransform: 'capitalize',
+              fontFamily: 'Inter',
+              fontStyle: 'normal',
+              fontSize: { sm: '16px', md: '17px' },
+              fontWeight: 600,
+              lineHeight: '25px',
+              textAlign: 'left',
+              width: { xs: '40px', sm: '40px', md: '95px', lg: '157px' },
+              height: { xs: '40px', sm: '40px', md: '45px' },
+              minWidth: 'max-content',
+              borderRadius: '15px'
+            }}
+          >
+            See more
+          </Button>
+        </Box>
+        <Box
+          sx={{
+            width: '100%',
+            padding: '20px 0',
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr', sm: '1fr', md: '1fr 1fr', lg: '1fr 1fr' },
+            paddingLeft: { sm: '0px', md: '90px'},
+            paddingRight: { sm: '0px', md: '90px'},
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: { xs: '17px', sm: '17px', md: '27px', lg: '27px' },
+          }}
+        >
+          {testimonials.map((testimonial, index) => {
+            return <TestimonialCard testimonial={testimonial}  key={index} />
           })}
         </Box>
       </Box>

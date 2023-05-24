@@ -75,3 +75,45 @@ export const properties = [
       }
     }
   ];
+
+  export const testimonials = [
+    {
+      id: "testimony1",
+      user: {
+        id: "user1",
+        name: "John Doe",
+        email: "johndoe@example.com",
+        profileImage: "/assets/profile-sample.png",
+        residences: "Tendian Residence"
+      },
+      ratingCategory: ["Excellent Service", "Quick Response"],
+      ratingMessage: "I had a great experience with Tendian Residence. The service provided was excellent, and they responded quickly to all my queries. Highly recommended!",
+      rating: 5
+    },
+    {
+      id: "testimony2",
+      user: {
+        id: "user2",
+        name: "Jane Smith",
+        email: "janesmith@example.com",
+        profileImage: "/assets/profile-sample-2.png",
+        residences: "Tendian Residence"
+      },
+      ratingCategory: ["Friendly Staff", "Smooth Process"],
+      ratingMessage: "I am extremely satisfied with Tendian Residence. The staff was friendly and helpful, and the whole application process went smoothly. I would definitely choose them again!",
+      rating: 4.5
+    },
+    {
+      id: "testimony3",
+      user: {
+        id: "user3",
+        name: "David Johnson",
+        email: "davidjohnson@example.com",
+        profileImage: "/assets/profile-sample.png",
+        residences: "Tendian Residence 2 "
+      },
+      ratingCategory: ["Great Value", "Excellent Amenities"],
+      ratingMessage: "I had a wonderful experience with Tendian Residence. The value for money was great, and the amenities provided were excellent. Highly recommended!",
+      rating: 4
+    }
+  ]
