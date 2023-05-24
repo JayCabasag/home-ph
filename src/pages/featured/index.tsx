@@ -1,7 +1,10 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import { Container } from '@mui/material'
+import { Container, Box, Typography, Button } from '@mui/material'
 import { COLORS } from '@/utils/app_constants'
+import SectionWrapper from '@/components/wrappers/PageWrapper'
+import { properties } from '@/utils/tests'
+import ResidentCard from '@/components/cards/ResidentCard'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,19 +17,98 @@ const FeaturedPage = () => {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <Container
-      className={inter.className}
-      sx={{
-        backgroundColor: COLORS.DIRTY_WHITE,
-        width: '100%',
-        height: { xs: 'auto', md: 'calc(100vh - 98px)'},
-        display: 'flex',
-        flexDirection: { xs: 'column', md: 'row' }
-      }}
-      maxWidth={false}
-    >
-      Featured
-    </Container>
+    <SectionWrapper heightAuto>
+      <Box sx={{ width: '100%' }}>
+        <Box
+          sx={{
+            width: '100%',
+            padding: '20px 0',
+            height: 'max-content',
+            paddingLeft: { sm: '0px', md: '90px'},
+            paddingRight: { sm: '0px', md: '90px'},
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between'
+          }}
+        >
+          <Typography
+            sx={{
+              fontFamily: 'Inter',
+              fontStyle: 'normal',
+              fontWeight: 600,
+              fontSize: { xs: '30px', md: '50px' },
+              lineHeight: { xs: '30px', md: '50px' },
+              color: COLORS.BLACK,
+            }}
+          >
+            Featured listing
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            width: '100%',
+            padding: '20px 0',
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr 1fr', sm: '1fr 1fr 1fr', md: '1fr 1fr 1fr 1fr', lg: '1fr 1fr 1fr 1fr' },
+            paddingLeft: { sm: '0px', md: '90px'},
+            paddingRight: { sm: '0px', md: '90px'},
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: { xs: '17px', sm: '17px', md: '27px', lg: '27px' },
+          }}
+        >
+          {properties.concat(properties).concat(properties).concat(properties).map((property, index) => {
+            return <ResidentCard property={property}  key={index} />
+          })}
+        </Box>
+      </Box>
+      </SectionWrapper>
+      <SectionWrapper heightAuto>
+      <Box sx={{ width: '100%' }}>
+        <Box
+          sx={{
+            width: '100%',
+            padding: '20px 0',
+            height: 'max-content',
+            paddingLeft: { sm: '0px', md: '90px'},
+            paddingRight: { sm: '0px', md: '90px'},
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between'
+          }}
+        >
+          <Typography
+            sx={{
+              fontFamily: 'Inter',
+              fontStyle: 'normal',
+              fontWeight: 600,
+              fontSize: { xs: '30px', md: '50px' },
+              lineHeight: { xs: '30px', md: '50px' },
+              color: COLORS.BLACK,
+            }}
+          >
+            Featured apartments
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            width: '100%',
+            padding: '20px 0',
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr 1fr', sm: '1fr 1fr 1fr', md: '1fr 1fr 1fr 1fr', lg: '1fr 1fr 1fr 1fr' },
+            paddingLeft: { sm: '0px', md: '90px'},
+            paddingRight: { sm: '0px', md: '90px'},
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: { xs: '17px', sm: '17px', md: '27px', lg: '27px' },
+          }}
+        >
+          {properties.concat(properties).concat(properties).concat(properties).map((property, index) => {
+            return <ResidentCard property={property}  key={index} />
+          })}
+        </Box>
+      </Box>
+      </SectionWrapper>
   </>
   )
 }
