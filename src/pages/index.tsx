@@ -446,7 +446,7 @@ export default function Home() {
       <Box
         sx={{ 
           height:  { xs: '180px', sm: '180px', md: '360px', lg: '360px' },
-          width: '100vw',
+          width: '100%',
           position: 'relative', // Set the Box position to relative
           overflow: 'hidden' // Hide any overflow from the Image
         }}
