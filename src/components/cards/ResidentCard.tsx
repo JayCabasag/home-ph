@@ -65,7 +65,9 @@ export default function ResidentCard({ property }: ResidentCardProps) {
         sx={{
             display: 'flex',
             justifyContent: 'space-between',
-            padding: { xs: '6px', sm: '8px', md: '12px', lg: '15px' }
+            alignItems: 'center',
+            padding: { xs: '12px', sm: '12px', md: '15px', lg: '15px' },
+
         }}
       >
         <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '5px'}}>

@@ -124,12 +124,12 @@ export default function Home() {
       <SectionWrapper>
       <Box
         sx={{
-          paddingTop: { xs: '15px', md: '0px' },
+          paddingTop: { xs: '30px', sm: '30px', md: '100px', lg: '100px' },
           width: { xs: '100%', md: '50%' },
           height: { xs: 'calc(100vh - 250px)', md: `calc(100vh - ${MD_NAVBAR_HEIGHT})`},
           display: 'flex',
           alignItems: 'center',
-          justifyContent:'center'
+          justifyContent:'center',
         }}
        >
         <Box 
@@ -224,6 +224,7 @@ export default function Home() {
           flexDirection: 'column',
           justifyContent: 'center',
           paddingLeft: { sm: '0px', md: '90px'},
+          paddingTop: { xs: '30px', sm: '30px', md: '100px', lg: '100px' },
         }}
        >
         <Typography
@@ -315,7 +316,7 @@ export default function Home() {
        </Box>
       </SectionWrapper>
       <SectionWrapper heightAuto>
-      <Box sx={{ width: '100%' }}>
+      <Box sx={{ width: '100%', paddingTop: { xs: '30px', sm: '30px', md: '100px', lg: '100px' }, }}>
         <Box
           sx={{
             width: '100%',
@@ -379,7 +380,7 @@ export default function Home() {
       </Box>
       </SectionWrapper>
       <SectionWrapper heightAuto>
-      <Box sx={{ width: '100%' }}>
+      <Box sx={{ width: '100%', padding: { xs: '30px 0', sm: '30px 0', md: '100px 0', lg: '100px 0' }}}>
         <Box
           sx={{
             width: '100%',
@@ -440,6 +441,25 @@ export default function Home() {
             return <TestimonialCard testimonial={testimonial}  key={index} />
           })}
         </Box>
+      </Box>
+      </SectionWrapper>
+      <Box
+        sx={{ 
+          height:  { xs: '180px', sm: '180px', md: '360px', lg: '360px' },
+          width: '100vw',
+          position: 'relative', // Set the Box position to relative
+          overflow: 'hidden' // Hide any overflow from the Image
+        }}
+      >
+        <Image
+          fill
+          src='/assets/bottom-main.png'
+          alt='bottom-main'
+        />
+      </Box>
+      <SectionWrapper heightAuto>
+      <Box sx={{ width: '100%', paddingTop: { xs: '30px 0', sm: '30px 0', md: '100px 0', lg: '100px 0' }, }}>
+        Comming soon...
       </Box>
       </SectionWrapper>
     </>
