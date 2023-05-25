@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import { Box, Button, Typography, useMediaQuery } from '@mui/material'
+import { Box, Button, Input, TextField, Typography, useMediaQuery } from '@mui/material'
 import { COLORS, MD_NAVBAR_HEIGHT } from '@/utils/app_constants'
 import Image from 'next/image'
 import SectionWrapper from '@/components/wrappers/PageWrapper'
@@ -456,6 +456,87 @@ export default function Home() {
           src='/assets/bottom-main.png'
           alt='bottom-main'
         />
+        <Box sx={{
+          position: 'absolute',
+          height: '100%',
+          width: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          flexDirection: 'column'
+        }}>
+        <Typography
+          variant='h1'
+          sx={{
+            color: '#FFFFFF',
+            fontSize: { xs: '20px', sm: '30px', md: '60px', xl: '60px' },
+            textAlign: 'center'
+          }}
+        >
+        Get our special prices & latest 
+        <br />
+        info Promos
+        </Typography>
+        <Box 
+          sx={{
+            backgroundColor: '#FFFFFF',
+            height: { xs: '45px', sm: '45px', md: '75px', xl: '75px' },
+            width: 'calc(100% - 20px)',
+            maxWidth: '1030px',
+            borderRadius: '15px',
+            marginTop: { xs: '15px', sm: '15px', md: '90px', xl: '90px' },
+          }}
+        >
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              height: '100%',
+              paddingX: { xs: '15px', sm: '15px', md: '30px', xl: '35px' },
+              gap: '15px',
+            }}
+          >
+        <Input
+          fullWidth
+          disableUnderline
+          placeholder='Drop your email address here...'
+          sx={{
+            outline: 'none',
+            fontFamily: 'Inter',
+            fontStyle: 'normal',
+            fontSize: { xs: '12px', sm: '12px', md: '17px', xl: '17px' },
+            fontWeight: 600,
+            border: 'none',
+            outlineStyle: 'none',
+            borderRight:  { xs: `1px solid ${COLORS.BROWN}`, sm: `1px solid ${COLORS.BROWN}`, md: `2px solid ${COLORS.BROWN}`, xl: `2px solid ${COLORS.BROWN}` }
+          }}
+        />
+          <Button
+            variant='contained'
+            sx={{
+              textTransform: 'capitalize',
+              fontFamily: 'Inter',
+              fontStyle: 'normal',
+              fontSize: { xs: '12px', sm: '12px', md: '17px', xl: '17px' },
+              fontWeight: 600,
+              lineHeight: '25px',
+              textAlign: 'left',
+              width: { xs: '40px', sm: '40px', md: '95px', lg: '157px' },
+              height: { xs: '37px', sm: '37px', md: '45px', lg: '45px'},
+              minWidth: 'max-content',
+              borderRadius: '15px',
+              backgroundColor: '#1C1827',
+              ':hover': {
+                backgroundColor: '#1C1827',
+              }
+            }}
+          >
+            Subscribe
+          </Button>
+          </Box>
+        </Box>
+        </Box>
       </Box>
       <SectionWrapper heightAuto>
       <Box sx={{ width: '100%', paddingTop: { xs: '30px 0', sm: '30px 0', md: '100px 0', lg: '100px 0' }, }}>
