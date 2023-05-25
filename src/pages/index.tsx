@@ -365,7 +365,7 @@ export default function Home() {
             width: '100%',
             padding: '20px 0',
             display: 'grid',
-            gridTemplateColumns: { xs: '1fr 1fr', sm: '1fr 1fr 1fr', md: '1fr 1fr 1fr 1fr', lg: '1fr 1fr 1fr 1fr' },
+            gridTemplateColumns: { xs: '1fr 1fr', sm: '1fr 1fr 1fr', md: '1fr 1fr 1fr', lg: '1fr 1fr 1fr 1fr' },
             paddingLeft: { sm: '0px', md: '90px'},
             paddingRight: { sm: '0px', md: '90px'},
             alignItems: 'center',
