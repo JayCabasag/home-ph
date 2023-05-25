@@ -121,7 +121,7 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
                 color: '#87858C'
               }}
           >
-            " {testimonial.ratingMessage} "
+            &quot; {testimonial.ratingMessage} &quot;
           </Typography>
           <Box>
           </Box>
