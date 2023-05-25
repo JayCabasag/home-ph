@@ -1,12 +1,13 @@
 import React from 'react'
 import { Inter } from 'next/font/google'
-import { Container, useMediaQuery, Box, Typography } from '@mui/material'
+import { Container, useMediaQuery, Box, Typography, List, ListItem, ListItemButton, ListItemText } from '@mui/material'
 import { COLORS } from '@/utils/app_constants'
 import Image from 'next/image'
 
 const inter = Inter({ subsets: ['latin'] })
 
 const socialIcons = ['/assets/instagram-icon.svg', '/assets/twitter-icon.svg', '/assets/youtube-icon.svg']
+const companiesLists = [{label: 'home', url: '/featured'}, {label: 'featured', url: '/featured'}, {label: 'properties', url: '/properties'}, {label: 'About us', url: '/about-us'}, {label: 'sign up', url: '/sign-up'}]
 
 const Footer = () => {
     const isMobileScreen = useMediaQuery('(max-width: 768px)');
@@ -61,7 +62,7 @@ const Footer = () => {
             <br />
             apartments to spacious family homes.
             </Typography>
-            <Box sx={{ display: 'flex', gap: '20px', marginTop: '28px' }}>
+            <Box sx={{ display: 'flex', gap: '20px', marginTop: '28px', marginBottom: '28px' }}>
                 {socialIcons.map((iconUrl, index) => {
                     return (<Box
                         key={index}
@@ -80,7 +81,107 @@ const Footer = () => {
                     </Box>)
                 })}
             </Box>
-                <Box sx={{
+                
+          </Box>
+
+          <Box sx={{ display: 'grid', gridTemplateColumns:  { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr', lg: '1fr 1fr 1fr' }}}>
+            <Box>
+                <Typography sx={{
+                    fontFamily: 'Inter',
+                    fontSize: '19px',
+                    fontWeight: 600,
+                    lineHeight: '30px',
+                    letterSpacing: '0em',
+                    textAlign: 'left',                    
+                }}>
+                    Company
+                </Typography>
+                <List>
+                {companiesLists.map((companyList, index) => {
+                    return (
+                        <ListItem disablePadding sx={{':hover': { backgroundColor: 'tranparent'}}} key={index}>
+                            <ListItemButton component="a" href={`${companyList.url}`} disableRipple>
+                            <Typography sx={{
+                                fontFamily: 'Inter',
+                                fontSize: { xs: '13px', sm: '13px', md: '17px', lg: '17px' },
+                                fontWeight: 600,
+                                lineHeight: '30px',
+                                letterSpacing: '0em',
+                                textAlign: 'left',
+                                textTransform: 'capitalize'
+                            }}>
+                                {companyList.label}
+                            </Typography>
+                            </ListItemButton>
+                        </ListItem>
+                    )
+                })}
+                </List>
+            </Box>
+            <Box>
+                <Typography sx={{
+                    fontFamily: 'Inter',
+                    fontSize: '19px',
+                    fontWeight: 600,
+                    lineHeight: '30px',
+                    letterSpacing: '0em',
+                    textAlign: 'left',                    
+                }}>
+                    Support
+                </Typography>
+                {companiesLists.map((companyList, index) => {
+                    return (
+                        <ListItem disablePadding sx={{':hover': { backgroundColor: 'tranparent'}}} key={index}>
+                            <ListItemButton component="a" href={`${companyList.url}`} disableRipple>
+                            <Typography sx={{
+                                fontFamily: 'Inter',
+                                fontSize: { xs: '13px', sm: '13px', md: '17px', lg: '17px' },
+                                fontWeight: 600,
+                                lineHeight: '30px',
+                                letterSpacing: '0em',
+                                textAlign: 'left',
+                                textTransform: 'capitalize'
+                            }}>
+                                {companyList.label}
+                            </Typography>
+                            </ListItemButton>
+                        </ListItem>
+                    )
+                })}
+            </Box>
+            <Box>
+                    <Typography sx={{
+                        fontFamily: 'Inter',
+                        fontSize: '19px',
+                        fontWeight: 600,
+                        lineHeight: '30px',
+                        letterSpacing: '0em',
+                        textAlign: 'left',                    
+                    }}>
+                    More
+                    </Typography>
+                    {companiesLists.map((companyList, index) => {
+                    return (
+                        <ListItem disablePadding sx={{':hover': { backgroundColor: 'tranparent'}}} key={index}>
+                            <ListItemButton component="a" href={`${companyList.url}`} disableRipple>
+                            <Typography sx={{
+                                fontFamily: 'Inter',
+                                fontSize: { xs: '13px', sm: '13px', md: '17px', lg: '17px' },
+                                fontWeight: 600,
+                                lineHeight: '30px',
+                                letterSpacing: '0em',
+                                textAlign: 'left',
+                                textTransform: 'capitalize'
+                            }}>
+                                {companyList.label}
+                            </Typography>
+                            </ListItemButton>
+                        </ListItem>
+                    )
+                })}
+            </Box>
+          </Box>
+          <Box sx={{
                     display: 'flex',
                     gap: '5px',
                     marginTop:  { xs: '30px', sm: '30px', md: '70px', lg: '70px' },
@@ -104,19 +205,6 @@ const Footer = () => {
                         HOME.ph, 2023 Allrights reserved
                     </Typography>
                 </Box>
-          </Box>
-
-          <Box sx={{ display: 'grid', gridTemplateColumns:  { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr', lg: '1fr 1fr 1fr' }}}>
-            <Box>
-                    column 1
-            </Box>
-            <Box>
-                    column 2
-            </Box>
-            <Box>
-                    column 3
-            </Box>
-          </Box>
         </Box>
       </Container>
     )
