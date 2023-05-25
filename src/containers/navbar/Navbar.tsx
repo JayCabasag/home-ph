@@ -90,8 +90,7 @@ function Navbar( props : NavbarProps) {
         sx={{
             backgroundColor: COLORS.WHITE,
             boxShadow: 'none',
-            paddingLeft: { xs: '0px', sm: '0px', md: '60px', lg: '115px'},
-            paddingRight: { xs: '0px', sm: '0px', md: '60px', lg: '115px'},
+            paddingX: { xs: '0px', sm: '0px', md: '60px', lg: '115px'},
             height: { xs: XS_NAVBAR_HEIGHT, md: MD_NAVBAR_HEIGHT},
             display: 'flex',
             justifyContent: 'center'

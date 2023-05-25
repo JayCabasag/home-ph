@@ -538,11 +538,6 @@ export default function Home() {
         </Box>
         </Box>
       </Box>
-      <SectionWrapper heightAuto>
-      <Box sx={{ width: '100%', paddingTop: { xs: '30px 0', sm: '30px 0', md: '100px 0', lg: '100px 0' }, }}>
-        Comming soon...
-      </Box>
-      </SectionWrapper>
     </>
   )
 }
