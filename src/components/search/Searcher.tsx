@@ -52,7 +52,7 @@ const Searcher = () => {
                         fontFamily: 'Inter',
                         fontStyle: 'normal',
                         fontWeight: 700,
-                        fontSize: '18px',
+                        fontSize: { xs: '15px', sm: '15px', md: '18px', lg: '18px'},
                         lineHeight: '25px',
                     }}>
                         {searchType}
@@ -72,9 +72,8 @@ const Searcher = () => {
             flexDirection: 'row',
             alignItems: 'center',
             justifyContent: 'space-between',
-            borderBottomRightRadius: { xs: '0', sm: '0', md: '10px', lg: '10px' },
-            borderBottomLeftRadius: { xs: '0', sm: '0', md: '10px', lg: '10px' },
-            marginBott: { xs: '10px', sm: '10px', md: '0px', lg: '0px' },
+            borderBottomRightRadius: { xs: '10px', sm: '10px', md: '10px', lg: '10px' },
+            borderBottomLeftRadius: { xs: '10px', sm: '10px', md: '10px', lg: '10px' }
         }}>
             <Box sx={{ width: '100%' }}>
                 <Typography sx={{
