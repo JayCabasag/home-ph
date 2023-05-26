@@ -61,7 +61,7 @@ export default function SearchFilters({ label, filters }: SearchFiltersProps ) {
                       lineHeight: '22px',
                       letterSpacing: '0em',
                       textAlign: 'left',
-                      marginTop: '17px',
+                      marginTop: { xs: '5px', sm: '5px', md: '16px', lg: '16px'},
                       color: '#817F87',
                       textTransform: 'capitalize'
                   }}>{selectedValue}</Button>
