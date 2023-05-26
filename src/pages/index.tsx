@@ -381,6 +381,7 @@ export default function Home() {
             paddingRight: { sm: '0px', md: '90px'},
             alignItems: 'center',
             justifyContent: 'space-between',
+            placeItems: 'center',
             gap: { xs: '17px', sm: '17px', md: '27px', lg: '27px' },
           }}
         >
