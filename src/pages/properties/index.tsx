@@ -5,6 +5,7 @@ import { COLORS } from '@/utils/app_constants'
 import SectionWrapper from '@/components/wrappers/PageWrapper'
 import { properties } from '@/utils/tests'
 import ResidentCard from '@/components/cards/ResidentCard'
+import Searcher from '@/components/search/Searcher'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,7 +19,7 @@ const PropertiesPage = () => {
       <link rel="icon" href="/favicon.ico" />
     </Head>
       <SectionWrapper heightAuto>
-      <Box sx={{ width: '100%' }}>
+      <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
         <Box
           sx={{
             width: '100%',
@@ -43,6 +44,15 @@ const PropertiesPage = () => {
           >
             Properties
           </Typography>
+        </Box>
+        <Box sx={{
+            height: 'auto',
+            width: '100%',
+            backgroundColor: COLORS.DIRTY_WHITE,
+            paddingX: { xs: '0px', sm: '0px', md: '60px', lg: '115px'},
+            zIndex: 1
+          }}>
+            <Searcher />
         </Box>
         <Box
           sx={{

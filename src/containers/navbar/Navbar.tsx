@@ -93,7 +93,8 @@ function Navbar( props : NavbarProps) {
             paddingX: { xs: '0px', sm: '0px', md: '60px', lg: '115px'},
             height: { xs: XS_NAVBAR_HEIGHT, md: MD_NAVBAR_HEIGHT},
             display: 'flex',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            zIndex: 99999 
         }}
       >
         <Toolbar>
@@ -198,7 +199,7 @@ function Navbar( props : NavbarProps) {
           </Box>
         </Toolbar>
       </AppBar>
-      <Box component="nav">
+      <Box component="nav" zIndex={9999}>
         <Drawer
           container={container}
           variant="temporary"

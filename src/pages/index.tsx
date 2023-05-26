@@ -125,11 +125,10 @@ export default function Home() {
       <SectionWrapper>
       <Box sx={{
         position: 'absolute',
-        height: '180px',
         width: { xs: 'calc(100% - 32px)', sm: '100%', md: '100%', lg: '100%' },
         backgroundColor: { xs: `${COLORS.DIRTY_WHITE}`, sm:  `${COLORS.DIRTY_WHITE}`, md: 'transparent', lg: 'transparent' },
         paddingX: { xs: '0px', sm: '0px', md: '60px', lg: '115px'},
-        zIndex: '9999',
+        zIndex: 1,
         transform: 'translateY(-50%)'
       }}>
         <Searcher />
