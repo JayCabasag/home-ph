@@ -76,7 +76,7 @@ const Searcher = () => {
             borderBottomLeftRadius: { xs: '0', sm: '0', md: '10px', lg: '10px' },
             marginBott: { xs: '10px', sm: '10px', md: '0px', lg: '0px' },
         }}>
-            <Box>
+            <Box sx={{ width: '100%' }}>
                 <Typography sx={{
                     fontFamily: 'Inter',
                     fontSize: { xs: '13px', sm: '13px', md: '16px', lg: '16px'},
@@ -88,7 +88,7 @@ const Searcher = () => {
                 }}>Location</Typography>
                 <SearchFilters label='Select your city' filters={['Taguig', 'Muntinlupa', 'Metro Manila', 'Batangas']}/>
             </Box>
-            <Box>
+            <Box sx={{ width: '100%' }}>
                 <Typography sx={{
                     fontFamily: 'Inter',
                     fontSize: { xs: '13px', sm: '13px', md: '16px', lg: '16px'},
@@ -100,7 +100,7 @@ const Searcher = () => {
                 }}>Type</Typography>
                  <SearchFilters label='Select property type' filters={['Apartment', 'Condo']}/>
             </Box>
-            <Box>
+            <Box sx={{ width: '100%' }}>
                 <Typography sx={{
                     fontFamily: 'Inter',
                     fontSize: { xs: '13px', sm: '13px', md: '16px', lg: '16px'},
@@ -112,6 +112,7 @@ const Searcher = () => {
                 }}>Price Range</Typography>
                 <SearchFilters label='Select price range' filters={['below 500,000', '500,000 - 1,000,000', '1,000,000 up']}/>
             </Box>
+            <Box sx={{ width: '100%', display: 'flex', justifyContent: {xs: 'center', sm: 'center', md: 'flex-end', ld: 'flex-end'} }}>
             <Button
                 variant='contained'
                 sx={{
@@ -123,13 +124,15 @@ const Searcher = () => {
                     lineHeight: '25px',
                     textAlign: 'left',
                     width: { xs: '100#', sm: '100%', md: '95px', lg: '157px' },
-                    height: { xs: '40px', sm: '40px', md: '45px' },
+                    height: { xs: '40px', sm: '40px', md: '45px', lg: '45px' },
                     minWidth: 'max-content',
-                    borderRadius: '15px'
+                    borderRadius: '15px',
+                    paddingX: { xs: '40px', sm: '40px', md: '0px', lg: '0px' },
                 }}
                 >
                 Search
                 </Button>
+            </Box>
         </Stack>
         
     </Box>

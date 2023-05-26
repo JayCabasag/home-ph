@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useState } from 'react';
 import Box from '@mui/material/Box';
 import Popper, { PopperPlacementType } from '@mui/material/Popper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -14,9 +14,10 @@ interface SearchFiltersProps {
 }
 
 export default function SearchFilters({ label, filters }: SearchFiltersProps ) {
-  const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
-  const [open, setOpen] = React.useState(false);
-  const [placement, setPlacement] = React.useState<PopperPlacementType>();
+  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+  const [open, setOpen] = useState(false);
+  const [placement, setPlacement] = useState<PopperPlacementType>();
+  const [selectedValue, setSelectedValue] = useState<string>(label)
 
   const handleClick =
     (newPlacement: PopperPlacementType) =>
@@ -26,8 +27,13 @@ export default function SearchFilters({ label, filters }: SearchFiltersProps ) {
       setPlacement(newPlacement);
     };
 
+  const handleSelectedValue = (value: string) => {
+    setSelectedValue(value)
+    setOpen(false)
+  }
+
   return (
-    <Box sx={{ zIndex: 9 }}>
+    <Box sx={{ zIndex: 9}}>
       <ClickAwayListener onClickAway={() => setOpen(false)}>
       <Box>
         <Popper open={open} anchorEl={anchorEl} placement={placement} transition disablePortal sx={{ zIndex: 9 }}>
@@ -36,15 +42,14 @@ export default function SearchFilters({ label, filters }: SearchFiltersProps ) {
               <Paper>
                 <List sx={{ backgroundColor: '#FFFFFF' }}>
                 {filters.map((filter, index) => {
-                  return <ListItem key={index} sx={{ fontWeight: 600, cursor: 'pointer', fontSize: { xs: '13px', sm: '13px', md: '16px', lg: '16px'} }}>{filter}</ListItem>
+                  return <ListItem onClick={() => handleSelectedValue(filter as string)} key={index} sx={{ fontWeight: 600, cursor: 'pointer', fontSize: { xs: '13px', sm: '13px', md: '16px', lg: '16px'} }}>{filter}</ListItem>
                 })}
                 </List>
               </Paper>
             </Fade>
           )}
         </Popper>
-        <Grid container justifyContent="center">
-          <Grid item>
+        <Box>
             <Button
                     variant='text'
                     onClick={handleClick('bottom-start')}
@@ -59,9 +64,8 @@ export default function SearchFilters({ label, filters }: SearchFiltersProps ) {
                       marginTop: '17px',
                       color: '#817F87',
                       textTransform: 'capitalize'
-                  }}>{label}</Button>
-          </Grid>
-        </Grid>
+                  }}>{selectedValue}</Button>
+          </Box>
       </Box>
       </ClickAwayListener>
     </Box>
