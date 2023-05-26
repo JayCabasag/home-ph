@@ -22,7 +22,8 @@ const  SectionWrapper = ({ children, heightAuto = false }:  SectionWrapperProps 
           width: '100%',
           height: { xs: 'auto', md: heightAuto ? 'auto' :`calc(100vh - ${MD_NAVBAR_HEIGHT})`},
           display: 'flex',
-          flexDirection: { xs: 'column', md: 'row' }
+          flexDirection: { xs: 'column', md: 'row' },
+          position: 'relative'
         }}
         maxWidth={false}
         disableGutters={!isMobileScreen}

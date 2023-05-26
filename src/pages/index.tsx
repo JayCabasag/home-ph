@@ -8,6 +8,7 @@ import DiscoverCard from '@/components/cards/DiscoverCard'
 import { properties, testimonials } from '@/utils/tests'
 import ResidentCard from '@/components/cards/ResidentCard'
 import TestimonialCard from '@/components/cards/TestimonialCard'
+import Searcher from '@/components/search/Searcher'
 
 const partnership = ['/assets/traveloka.png', '/assets/pegipegi.png', '/assets/ticket-com.png']
 const discoveries = [
@@ -82,7 +83,7 @@ export default function Home() {
             color: '#43404B'
           }}
         >
-          Our Partnership
+          Our Partners
         </Typography>
         <Box
           sx={{
@@ -122,6 +123,17 @@ export default function Home() {
        </Box>
       </SectionWrapper>
       <SectionWrapper>
+      <Box sx={{
+        position: 'absolute',
+        height: '180px',
+        width: { xs: 'calc(100% - 32px)', sm: '100%', md: '100%', lg: '100%' },
+        backgroundColor: { xs: `${COLORS.DIRTY_WHITE}`, sm:  `${COLORS.DIRTY_WHITE}`, md: 'transparent', lg: 'transparent' },
+        paddingX: { xs: '0px', sm: '0px', md: '60px', lg: '115px'},
+        zIndex: '9999',
+        transform: 'translateY(-50%)'
+      }}>
+        <Searcher />
+      </Box>
       <Box
         sx={{
           paddingTop: { xs: '30px', sm: '30px', md: '100px', lg: '100px' },
