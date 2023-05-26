@@ -107,8 +107,7 @@ const Searcher = () => {
                     fontWeight: 600,
                     lineHeight: '22px',
                     letterSpacing: '0em',
-                    textAlign: 'left',
-                    
+                    textAlign: 'left'
                 }}>Price Range</Typography>
                 <SearchFilters label='Select price range' filters={['below 500,000', '500,000 - 1,000,000', '1,000,000 up']}/>
             </Box>
