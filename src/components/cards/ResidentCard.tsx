@@ -3,8 +3,10 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import { useState } from 'react'
 import { Button, CardActionArea, CardActions, useMediaQuery, Box } from '@mui/material';
 import Image from 'next/image';
+import Sidebar from '@/containers/sidebar/Sidebar';
 
 interface ResidentCardProps {
     property: any
@@ -12,10 +14,16 @@ interface ResidentCardProps {
 
 export default function ResidentCard({ property }: ResidentCardProps) {
   const isMobileScreen = useMediaQuery('(max-width: 768px)');
+  const [showSidebar, setShowSidebar] = useState<boolean>(false)
+
+  const handleToggleSidebar = () => {
+    setShowSidebar(prevState => !prevState)
+  }
   
   return (
     <Card sx={{ maxWidth: 380, height: '100%', display: 'flex', flexDirection: 'column'}}>
-      <CardActionArea sx={{flex: 1}}>
+      <Sidebar property={property} open={showSidebar} handleToggleSidebar={handleToggleSidebar}/>
+      <CardActionArea sx={{flex: 1}} onClick={handleToggleSidebar}>
         <CardMedia
           component="img"
           height={isMobileScreen ? '200px' : '345px'}

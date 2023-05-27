@@ -1,5 +1,6 @@
 export const properties = [
     {
+      id: '123',
       name: 'Oakwood Apartments',
       rating: 4,
       type: ['Apartment', 'Condo'],
@@ -15,6 +16,7 @@ export const properties = [
       }
     },
     {
+      id: '1234',
       name: 'Maple Heights',
       rating: 3.4,
       type: ['House'],
@@ -30,6 +32,7 @@ export const properties = [
       }
     },
     {
+      id: '1235',
       name: 'Pineview Villas',
       rating: 5,
       type: ['Apartment', 'Condo'],
@@ -45,6 +48,7 @@ export const properties = [
       }
     },
     {
+      id: '1267',
       name: 'Sunset Terrace',
       rating: 2.3,
       type: ['House'],
@@ -60,6 +64,7 @@ export const properties = [
       }
     },
     {
+      id: '1244',
       name: 'Riverbend Estates',
       rating: 4,
       type: ['Apartment'],

@@ -68,8 +68,7 @@ export default function Home() {
             color: COLORS.GRAY
           }}
         >
-        Your dream home awaits. This stunning property features all
-        the amenities and comfort you desire.
+        Whether you're a first-time buyer, a seasoned investor, or simply looking to explore the market, our web application is here to simplify your journey. Join us today and experience the innovative fusion of social media and real estate, brought to you by one dedicated developer and the power of open-source.
         </Typography>
 
         <Typography
@@ -199,12 +198,7 @@ export default function Home() {
             color: COLORS.GRAY
           }}
         >
-          Our commitment to quality craftsmanship, energy efficiency,
-          sustainability, transparency, and open communication ensures
-          that our clients received exceptional service and seamless
-          home-buying experience. We prioritize delivering high-quality
-          homes that offer comfortable and luxurious living spaces,
-          ensuring excellent value for our clients&apos; investments
+          <strong>Our mission is simple</strong>: to provide an intuitive and user-friendly platform for individuals seeking to sell or purchase houses, condos, and various properties. By leveraging the power of social media, we've created a vibrant community that connects sellers with potential buyers, making property transactions seamless and efficient.
         </Typography>
         <Button
           variant='contained'
@@ -266,16 +260,16 @@ export default function Home() {
             color: COLORS.GRAY
           }}
         >
-          We are please to offer house listing services and provide various options and packages to assist you in finding your dream home.
+          At our core, we believe in providing a user-friendly experience for individuals looking to buy or sell houses, condos, or any type of property. Our platform connects sellers with potential buyers, streamlining the process and ensuring maximum exposure for your listings.
         </Typography>
         <Box
           sx={{
-            marginTop:  { xs: '34px', md: '82px' },
+            marginTop:  { xs: '34px', sm: '34px', md: '62px', lg: '82px' },
             display: { xs: 'flex', md: 'grid'},
             flexDirection: 'column',
             gridTemplateColumns: '1fr 1fr', // Two columns with equal width
             width: 'max-content',
-            columnGap: '134px'
+            columnGap: { xs: '0px',sm: '0px', md: '0px', lg: '120px' }
           }}
         >
           {discoveries.map((discover, index) => {
@@ -283,24 +277,23 @@ export default function Home() {
           })}
         </Box>
         <Button
-          variant='contained'
-          sx={{
-            marginTop: { xs: '34px', md: '54px' },
-            textTransform: 'capitalize',
-            fontFamily: 'Inter',
-            fontStyle: 'normal',
-            fontSize: { sm: '16px', md: '17px' },
-            fontWeight: 600,
-            lineHeight: '25px',
-            textAlign: 'left',
-            width: { xs: '40px', sm: '40px', md: '95px', lg: '157px' },
-            height: { xs: '40px', sm: '40px', md: '45px' },
-            minWidth: 'max-content',
-            borderRadius: '15px'
-          }}
-        >
-          See more
-        </Button>
+            variant='contained'
+            sx={{
+              textTransform: 'capitalize',
+              fontFamily: 'Inter',
+              fontStyle: 'normal',
+              fontSize: { sm: '16px', md: '17px' },
+              fontWeight: 600,
+              lineHeight: '25px',
+              textAlign: 'left',
+              width: { xs: '40px', sm: '40px', md: '95px', lg: '157px' },
+              height: { xs: '40px', sm: '40px', md: '45px' },
+              minWidth: 'max-content',
+              borderRadius: '15px'
+            }}
+          >
+            See more
+          </Button>
        </Box>
       <Box
         sx={{

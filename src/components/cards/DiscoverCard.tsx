@@ -23,8 +23,8 @@ export default function DiscoverCard({ total, message }:  DiscoverCardProps ) {
         <Typography
           sx={{
             fontFamily: 'Inter',
-            fontSize: { xs: '42px', md: '55px'},
-            fontWeight: '700',
+            fontSize: { xs: '32px',sm: '35px', md: '40px', lg: '55px' },
+            fontWeight: 700,
             lineHeight: '34px',
             letterSpacing: '0em',
             textAlign: 'left',
@@ -38,7 +38,7 @@ export default function DiscoverCard({ total, message }:  DiscoverCardProps ) {
           sx={{
             maxWidth: '190px',
             fontFamily: 'Inter',
-            fontSize: { xs: '14px', md: '17px'},
+            fontSize: { xs: '14px',sm: '14px', md: '14px', lg: '17px'},
             fontWeight: 500,
             lineHeight: '25px',
             letterSpacing: '0em',
