@@ -29,7 +29,12 @@ const OverviewTab = () => {
                       borderBottom:  'none'
                   }}>
                       <IconButton sx={{ display: 'flex', flexDirection: 'column' , gap: '2px'}}>
-                          <Box sx={{ position: 'relative', overflow: 'hidden', height: '26px', width: '26px'}} key={index}>
+                          <Box sx={{ 
+                            position: 'relative', 
+                            overflow: 'hidden', 
+                            height: {xs: '20px', sm: '20px',md: '26px',lg: '26px'}, 
+                            width: {xs: '20px', sm: '20px',md: '26px',lg: '26px'}, 
+                          }} key={index}>
                               <Image
                                   fill
                                   src={overviewOption.asset}
@@ -39,7 +44,17 @@ const OverviewTab = () => {
                           </Box>
                           <Typography
                               sx={{
-                                  textTransform: 'capitalize',
+                                fontFamily: 'Inter',
+                                fontSize: { xs: '14px', sm: '14px', md: '18px', lg: '18px' },
+                                fontWeight: 400,
+                                lineHeight: '23px',
+                                letterSpacing: '0em',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                height: '100%',
+                                cursor: 'pointer',
+                                textTransform: 'capitalize'
                               }} 
                           >
                               {overviewOption.label}
@@ -52,10 +67,10 @@ const OverviewTab = () => {
       <Divider />
       <Box sx={{
         display: 'flex',
-        marginTop: '15px',
+        marginTop: '20px',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingX: '35px'
+        paddingX: '25px'
       }}>
         <Typography
           sx={{
@@ -96,7 +111,7 @@ const OverviewTab = () => {
         <List>
           {propertyMainInfoOptions.map((propertyMainInfoOption, index) => {
             return (
-            <ListItem key={index} sx={{ display: 'flex', gap: '15px' }}>
+            <ListItem key={index} sx={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
               <Box sx={{ position: 'relative', overflow: 'hidden', minHeight: '26px', minWidth: '26px'}} >
                   <Image
                       fill
@@ -105,7 +120,11 @@ const OverviewTab = () => {
                       style={{ zIndex: 2 }}
                   />
               </Box>
-              <Typography>
+              <Typography
+                sx={{
+                  fontSize: { xs: '14px', sm: '14px', md: '16px', lg: '16px' },
+                }}
+              >
                 {propertyMainInfoOption.label}
               </Typography>
             </ListItem>
@@ -118,7 +137,7 @@ const OverviewTab = () => {
         marginTop: '15px',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingX: '35px'
+        paddingX: '25px'
       }}>
         <Typography
           sx={{
@@ -155,7 +174,7 @@ const OverviewTab = () => {
         marginTop: '15px',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingX: '35px'
+        paddingX: '25px'
       }}>
         <Typography
           sx={{
@@ -179,8 +198,12 @@ const OverviewTab = () => {
           {propertyDescription.map((localConvenience, index) => {
             return (
             <ListItem key={index} sx={{ display: 'flex', gap: '15px' }}>
-              <RadioButtonUncheckedIcon sx={{ height: '15px', width: '15px' }}/>
-              <Typography>
+              <RadioButtonUncheckedIcon sx={{ height: '12px', width: '12px' }}/>
+              <Typography
+                 sx={{
+                  fontSize: { xs: '14px', sm: '14px', md: '16px', lg: '16px' },
+                }}
+              >
                 {localConvenience}
               </Typography>
             </ListItem>
@@ -194,7 +217,7 @@ const OverviewTab = () => {
         marginTop: '15px',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingX: '35px'
+        paddingX: '25px'
       }}>
         <Typography
           sx={{
@@ -226,8 +249,12 @@ const OverviewTab = () => {
                       style={{ zIndex: 2 }}
                   />
               </Box> */}
-              <RadioButtonUncheckedIcon sx={{ height: '15px', width: '15px' }}/>
-              <Typography>
+              <RadioButtonUncheckedIcon sx={{ height: '12px', width: '12px' }}/>
+              <Typography
+                 sx={{
+                  fontSize: { xs: '14px', sm: '14px', md: '16px', lg: '16px' },
+                }}
+              >
                 {localConvenience}
               </Typography>
             </ListItem>
