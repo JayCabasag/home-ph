@@ -22,3 +22,8 @@ export const GOOGLE_DOCS_PLAYER = 'http://docs.google.com/gview?embedded=true&ur
 
 export const MD_NAVBAR_HEIGHT = '80px'
 export const XS_NAVBAR_HEIGHT = '65px'
+
+export enum PropertyCategory {
+    FOR_RENT = 'for-rent',
+    FOR_SALE = 'for-sale'
+}

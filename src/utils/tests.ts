@@ -13,6 +13,11 @@ export const properties = [
         back: 'back1.jpg',
         interior: 'interior1.jpg',
         top: 'top1.jpg'
+      },
+      category: 'for-sale',
+      price: {
+        amount: 1500000,
+        type: 'once'
       }
     },
     {
@@ -29,6 +34,11 @@ export const properties = [
         back: 'back2.jpg',
         interior: 'interior2.jpg',
         top: 'top2.jpg'
+      },
+      category: 'for-sale',
+      price: {
+        amount: 1500000,
+        type: 'once'
       }
     },
     {
@@ -45,6 +55,11 @@ export const properties = [
         back: 'back3.jpg',
         interior: 'interior3.jpg',
         top: 'top3.jpg'
+      },
+      category: 'for-rent',
+      price: {
+        amount: 15000,
+        type: 'month'
       }
     },
     {
@@ -61,6 +76,11 @@ export const properties = [
         back: 'back4.jpg',
         interior: 'interior4.jpg',
         top: 'top4.jpg'
+      },
+      category: 'for-rent',
+      price: {
+        amount: 10000,
+        type: 'month'
       }
     },
     {
@@ -77,6 +97,11 @@ export const properties = [
         back: 'back5.jpg',
         interior: 'interior5.jpg',
         top: 'top5.jpg'
+      },
+      category: 'for-rent',
+      price: {
+        amount: 8000,
+        type: 'month'
       }
     }
   ];
