@@ -68,7 +68,7 @@ export default function Home() {
             color: COLORS.GRAY
           }}
         >
-        Whether you're a first-time buyer, a seasoned investor, or simply looking to explore the market, our web application is here to simplify your journey. Join us today and experience the innovative fusion of social media and real estate, brought to you by one dedicated developer and the power of open-source.
+        Whether you&apos;re a first-time buyer, a seasoned investor, or simply looking to explore the market, our web application is here to simplify your journey. Join us today and experience the innovative fusion of social media and real estate, brought to you by one dedicated developer and the power of open-source.
         </Typography>
 
         <Typography
@@ -198,7 +198,7 @@ export default function Home() {
             color: COLORS.GRAY
           }}
         >
-          <strong>Our mission is simple</strong>: to provide an intuitive and user-friendly platform for individuals seeking to sell or purchase houses, condos, and various properties. By leveraging the power of social media, we've created a vibrant community that connects sellers with potential buyers, making property transactions seamless and efficient.
+          <strong>Our mission is simple</strong>: to provide an intuitive and user-friendly platform for individuals seeking to sell or purchase houses, condos, and various properties. By leveraging the power of social media, we&apos;ve created a vibrant community that connects sellers with potential buyers, making property transactions seamless and efficient.
         </Typography>
         <Button
           variant='contained'
