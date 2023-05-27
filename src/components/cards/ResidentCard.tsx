@@ -3,8 +3,11 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import { useState } from 'react'
 import { Button, CardActionArea, CardActions, useMediaQuery, Box } from '@mui/material';
 import Image from 'next/image';
+import Sidebar from '@/containers/sidebar/Sidebar';
+import { COLORS, PropertyCategory } from '@/utils/app_constants';
 
 interface ResidentCardProps {
     property: any
@@ -12,33 +15,76 @@ interface ResidentCardProps {
 
 export default function ResidentCard({ property }: ResidentCardProps) {
   const isMobileScreen = useMediaQuery('(max-width: 768px)');
+  const [showSidebar, setShowSidebar] = useState<boolean>(false)
+  const propertyCategory = property.category
+  const isForRent = propertyCategory === PropertyCategory.FOR_RENT
+  const isForSale = propertyCategory === PropertyCategory.FOR_SALE
+  const handleToggleSidebar = () => {
+    setShowSidebar(prevState => !prevState)
+  }
   
   return (
     <Card sx={{ maxWidth: 380, height: '100%', display: 'flex', flexDirection: 'column'}}>
-      <CardActionArea sx={{flex: 1}}>
+      <Sidebar property={property} open={showSidebar} handleToggleSidebar={handleToggleSidebar}/>
+      <CardActionArea sx={{flex: 1, position: 'relative'}} onClick={handleToggleSidebar}>
+        <Box
+          sx={{
+          position: 'absolute',
+          backgroundColor: '#FFFFFF',
+          padding: { xs: '5px',sm: '5px', md: '13px', lg: '15px' }
+          }}
+          
+        >
+          {isForRent && `Php ${Number(property.price.amount).toLocaleString()}/${property.price.type}`}
+          {isForSale && `Php ${Number(property.price.amount).toLocaleString()}`}
+        </Box>
         <CardMedia
           component="img"
-          height={isMobileScreen ? '200px' : '345px'}
+          height={isMobileScreen ? '180px' : '300px'}
           width={isMobileScreen ? '200px' : '345px'}
           image={property.mainImage}
-          alt="green iguana"
+          alt="house"
         />
         <CardContent sx={{height: '100%' }}>
-          <Typography
-            gutterBottom
-            component="div"
+          <Box
             sx={{
-                fontFamily: 'Inter',
-                fontSize: { xs: '14px', sm: '15px', md: '17px', lg: '22px' },
-                fontWeight: 700,
-                lineHeight: { xs: '14px', sm: '15px', md: '17px', lg: '22px' },
-                letterSpacing: '0em',
-                textAlign: 'left',
-              }}
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
+              gap: '5px'
+            }}
           >
-            {property.name}
-          </Typography>
-          <Box>
+            <Typography
+              gutterBottom
+              component="div"
+              sx={{
+                  fontFamily: 'Inter',
+                  fontSize: { xs: '14px', sm: '15px', md: '17px', lg: '22px' },
+                  fontWeight: 700,
+                  lineHeight: { xs: '16px', sm: '17px', md: '19px', lg: '24px' },
+                  letterSpacing: '0em',
+                  textAlign: 'left',
+                }}
+            >
+              {property.name}
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: { xs: '10px', sm: '10px', md: '14px', lg: '14px' },
+                backgroundColor: isForSale ? 'green'  : COLORS.BROWN,
+                minWidth: 'max-content',
+                color: COLORS.WHITE,
+                padding: { xs: '2px 5px', sm: '2px 5px', md: '5px 15px', lg: '5px 15px' },
+                borderRadius: '5px',
+                textTransform: 'capitalize'
+              }}
+            >
+              {isForRent && 'For rent'}
+              {isForSale && 'For sale'}
+            </Typography>
+          </Box>
+          <Box sx={{ display: 'flex', gap: {xs: '5px', sm: '5px', md: '15px', lg: '15px'}, flexWrap: 'wrap', marginTop: {xs: '5px', sm: '5px', md: '10px', lg: '10px'},}}>
            {property.type.map((type: string, index: number) => {
                 return (
                     <Typography

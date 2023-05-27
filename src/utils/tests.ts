@@ -1,5 +1,6 @@
 export const properties = [
     {
+      id: '123',
       name: 'Oakwood Apartments',
       rating: 4,
       type: ['Apartment', 'Condo'],
@@ -12,9 +13,15 @@ export const properties = [
         back: 'back1.jpg',
         interior: 'interior1.jpg',
         top: 'top1.jpg'
+      },
+      category: 'for-sale',
+      price: {
+        amount: 1500000,
+        type: 'once'
       }
     },
     {
+      id: '1234',
       name: 'Maple Heights',
       rating: 3.4,
       type: ['House'],
@@ -27,12 +34,18 @@ export const properties = [
         back: 'back2.jpg',
         interior: 'interior2.jpg',
         top: 'top2.jpg'
+      },
+      category: 'for-sale',
+      price: {
+        amount: 1500000,
+        type: 'once'
       }
     },
     {
+      id: '1235',
       name: 'Pineview Villas',
       rating: 5,
-      type: ['Apartment', 'Condo'],
+      type: ['Apartment', 'Condo', 'Commercial', 'Industrial'],
       reviews: [],
       mainImage: '/assets/image-3.jpg',
       contact: ['Contact 5', 'Contact 6'],
@@ -42,9 +55,15 @@ export const properties = [
         back: 'back3.jpg',
         interior: 'interior3.jpg',
         top: 'top3.jpg'
+      },
+      category: 'for-rent',
+      price: {
+        amount: 15000,
+        type: 'month'
       }
     },
     {
+      id: '1267',
       name: 'Sunset Terrace',
       rating: 2.3,
       type: ['House'],
@@ -57,9 +76,15 @@ export const properties = [
         back: 'back4.jpg',
         interior: 'interior4.jpg',
         top: 'top4.jpg'
+      },
+      category: 'for-rent',
+      price: {
+        amount: 10000,
+        type: 'month'
       }
     },
     {
+      id: '1244',
       name: 'Riverbend Estates',
       rating: 4,
       type: ['Apartment'],
@@ -72,6 +97,11 @@ export const properties = [
         back: 'back5.jpg',
         interior: 'interior5.jpg',
         top: 'top5.jpg'
+      },
+      category: 'for-rent',
+      price: {
+        amount: 8000,
+        type: 'month'
       }
     }
   ];
