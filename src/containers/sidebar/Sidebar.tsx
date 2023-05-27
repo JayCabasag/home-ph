@@ -127,15 +127,29 @@ export default function Sidebar({ property, open, handleToggleSidebar }: Sidebar
                     </Box>
                     <Box sx={{
                         marginTop: {xs: '6px', sm: '6px',md: '13px', lg: '13px'},
+                        display: 'flex',
+                        gap: {xs: '5px', sm: '5px',md: '15px', lg: '15px'},
+                        flexWrap: 'wrap'
                     }}>
-                        <Typography sx={{
-                            fontFamily: 'Inter',
-                            fontSize: {xs: '15px', sm: '15px',md: '18px', lg: '18px'},
-                            fontWeight: 400,
-                            lineHeight: '23px',
-                            letterSpacing: '0em',
-                            textAlign: 'left',                  
-                        }}>{property.type[0]}</Typography>
+                         {property.type.map((type: string, index: number) => {
+                            return (
+                                <Typography
+                                    key={index}
+                                    variant="body2"
+                                    color="text.secondary"
+                                    sx={{
+                                        fontFamily: 'Inter',
+                                        fontSize: {xs: '15px', sm: '15px',md: '18px', lg: '18px'},
+                                        fontWeight: 400,
+                                        lineHeight: '23px',
+                                        letterSpacing: '0em',
+                                        textAlign: 'left', 
+                                    }}
+                                >
+                                    {type}
+                                </Typography>
+                            )
+                        })}
                     </Box>
                     </Box>
                     <Box sx={{ marginTop: { xs: '10px', sm: '10px', md: '18px', lg: '18px' }, borderBottom: '1px solid gray'}}>

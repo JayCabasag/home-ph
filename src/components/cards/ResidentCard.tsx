@@ -71,11 +71,11 @@ export default function ResidentCard({ property }: ResidentCardProps) {
             </Typography>
             <Typography
               sx={{
-                fontSize: { xs: '11px', sm: '11px', md: '14px', lg: '17px' },
+                fontSize: { xs: '10px', sm: '10px', md: '14px', lg: '14px' },
                 backgroundColor: isForSale ? 'green'  : COLORS.BROWN,
                 minWidth: 'max-content',
                 color: COLORS.WHITE,
-                paddingX: { xs: '5px', sm: '5px', md: '15px', lg: '15px' },
+                padding: { xs: '2px 5px', sm: '2px 5px', md: '5px 15px', lg: '5px 15px' },
                 borderRadius: '5px',
                 textTransform: 'capitalize'
               }}
@@ -84,7 +84,7 @@ export default function ResidentCard({ property }: ResidentCardProps) {
               {isForSale && 'For sale'}
             </Typography>
           </Box>
-          <Box>
+          <Box sx={{ display: 'flex', gap: {xs: '5px', sm: '5px', md: '15px', lg: '15px'}, flexWrap: 'wrap', marginTop: {xs: '5px', sm: '5px', md: '10px', lg: '10px'},}}>
            {property.type.map((type: string, index: number) => {
                 return (
                     <Typography

@@ -45,7 +45,7 @@ export const properties = [
       id: '1235',
       name: 'Pineview Villas',
       rating: 5,
-      type: ['Apartment', 'Condo'],
+      type: ['Apartment', 'Condo', 'Commercial', 'Industrial'],
       reviews: [],
       mainImage: '/assets/image-3.jpg',
       contact: ['Contact 5', 'Contact 6'],
