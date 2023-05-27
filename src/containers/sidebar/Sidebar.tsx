@@ -2,9 +2,12 @@ import { Box, List, ListItem } from '@mui/material';
 import Drawer from '@mui/material/Drawer';
 import { useState, useEffect } from 'react'
 import { Close } from '@mui/icons-material';
-import { COLORS, MD_NAVBAR_HEIGHT, XS_NAVBAR_HEIGHT } from '@/utils/app_constants';
+import { COLORS, MD_NAVBAR_HEIGHT, PropertyCategory, XS_NAVBAR_HEIGHT } from '@/utils/app_constants';
 import { IconButton, Typography } from '@mui/material';
 import Image from 'next/image';
+import OverviewTab from './OverviewTabs';
+import ReviewsTab from './ReviewsTab';
+import GalleryTab from './GalleryTab';
 
 
 const sidebarTab = ['overview', 'reviews', 'gallery']
@@ -19,6 +22,9 @@ export default function Sidebar({ property, open, handleToggleSidebar }: Sidebar
 
     const [totalStarRatings, setTotalStarRatings] = useState<number[]>([])
     const [selectedTab, setSelectedTab] = useState('overview')
+    const propertyCategory = property.category
+    const isForRent = propertyCategory === PropertyCategory.FOR_RENT
+    const isForSale = propertyCategory === PropertyCategory.FOR_SALE
 
     const generateStars = (ratingValue: number) => {
         let rating = ratingValue
@@ -68,8 +74,24 @@ export default function Sidebar({ property, open, handleToggleSidebar }: Sidebar
                         alt={property.name}
                     />
                 </Box>
+                <Box sx={{ width: '100%', position: 'absolute', zIndex: 2, transform: 'translate(-100%, -100%)', marginLeft: '100%', marginTop: '-15px', backgroundColor: '#FFFFFF', maxWidth: 'max-content' }}>
+                    <Typography sx={{
+                        paddingX: '15px'
+                    }}>
+                        {isForRent && `Php ${Number(property.price.amount).toLocaleString()}/${property.price.type}`}
+                        {isForSale && `Php ${Number(property.price.amount).toLocaleString()}`}
+                    </Typography>
+                </Box>
                 <Box sx={{ paddingLeft: '19px' }}>
-                    <Box>
+                    <Box
+                        sx={{
+                        width: '100%',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'flex-start',
+                        gap: '5px'
+                        }}
+                    >
                         <Typography sx={{
                             fontFamily: 'Inter',
                             fontSize: {xs: '20px', sm: '20px',md: '22px', lg: '22px'},
@@ -79,6 +101,22 @@ export default function Sidebar({ property, open, handleToggleSidebar }: Sidebar
                             textAlign: 'left',
                             marginTop: '16px',         
                         }}>{property.name}</Typography>
+                         <Typography
+                            sx={{
+                                fontSize: { xs: '12px', sm: '12px', md: '14px', lg: '14px' },
+                                backgroundColor: isForSale ? 'green'  : COLORS.BROWN,
+                                minWidth: 'max-content',
+                                color: COLORS.WHITE,
+                                padding: { xs: '2px 6px', sm: '2px 6px', md: '5px 15px', lg: '5px 15px' },
+                                borderRadius: '5px',
+                                textTransform: 'capitalize',
+                                marginTop: '16px',
+                                marginRight: '19px'
+                            }}
+                            >
+                            {isForRent && 'For rent'}
+                            {isForSale && 'For sale'}
+                            </Typography>
                     </Box>
                     <Box sx={{ display: 'flex',marginTop: {xs: '8px', sm: '8px',md: '13px', lg: '13px'}, alignItems: 'center', gap: '7px'   }}>
                         <Typography sx={{
@@ -174,6 +212,9 @@ export default function Sidebar({ property, open, handleToggleSidebar }: Sidebar
                             })}
                         </List>
                     </Box>
+                    {selectedTab === 'overview' && <OverviewTab />}
+                    {selectedTab === 'reviews' && <ReviewsTab />}
+                    {selectedTab === 'gallery' && <GalleryTab />}
                 </Box>
             </Drawer>
         </Box>
