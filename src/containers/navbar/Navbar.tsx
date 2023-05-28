@@ -201,7 +201,7 @@ function Navbar( props : NavbarProps) {
                 fontWeight: 600,
                 lineHeight: '25px',
                 textAlign: 'left',
-                minWidth: { xs: 'max-content', sm: '40px', md: '157px' },
+                minWidth: { xs: 'max-content', sm: 'max-content', md: '157px', lg: '157px' },
                 height: { xs: '40px',sm: '40px', md: '45px' },
                 ':hover': {
                     backgroundColor: 'unset'
@@ -219,7 +219,7 @@ function Navbar( props : NavbarProps) {
                 fontWeight: 600,
                 lineHeight: '25px',
                 textAlign: 'left',
-                minWidth: { xs: 'max-content', sm: '40px', md: '157px' },
+                minWidth: { xs: 'max-content', sm: 'max-content', md: '157px', lg: '157px' },
                 height: { xs: '40px', sm: '40px', md: '45px' },
                 borderRadius: '15px'
               }}
