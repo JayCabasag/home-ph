@@ -1,7 +1,7 @@
 import React from 'react'
 import { Inter } from 'next/font/google'
 import { Container, useMediaQuery, Box, Typography, List, ListItem, ListItemButton, ListItemText } from '@mui/material'
-import { COLORS } from '@/utils/app_constants'
+import { COLORS, MD_NAVBAR_HEIGHT, XS_NAVBAR_HEIGHT } from '@/utils/app_constants'
 import Image from 'next/image'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -35,20 +35,32 @@ const Footer = () => {
             paddingY: { xs: '20px', sm: '20px', md: '70px', lg: '70px' },
             }}>
           <Box>
-            <Typography
-                variant="h6"
-                component="div"
-                sx={{
-                    flexGrow: 1,
-                    display: 'flex',
-                    fontSize: { xs: '18px', sm: '25px', md: '30px', lg: '30px' },
-                    fontWeight: 900,
-                    textAlign: 'left',
-                    color: COLORS.BLACK
-                }}
+          <Box sx={{ paddingY: '10px', width: '100%', display: 'flex'}}>
+          <Box
+            sx={{
+              position: 'relative',
+              overflow: 'hidden',
+              height: {
+                  xs: `calc(${XS_NAVBAR_HEIGHT} - 20px)`,
+                  sm: `calc(${XS_NAVBAR_HEIGHT} - 20px)`,
+                  md: `calc(${MD_NAVBAR_HEIGHT} - 20px)`,
+                  lg: `calc(${MD_NAVBAR_HEIGHT} - 20px)`
+                },
+              minWidth: { 
+                  xs: '130px',
+                  sm: '130px',
+                  md: '180px',
+                  lg: '180px'
+                } 
+              }}
             >
-                HOME.PH
-            </Typography>
+            <Image
+                fill
+                src='/assets/logo-with-slogan.svg'
+                alt='house'
+            />
+          </Box>
+          </Box>
             <Typography sx={{
                 fontFamily: 'Inter',
                 fontSize: { xs: '13px', sm: '13px', md: '17px', lg: '17px' },

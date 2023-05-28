@@ -13,6 +13,7 @@ import Button from '@mui/material/Button';
 import { COLORS, MD_NAVBAR_HEIGHT, XS_NAVBAR_HEIGHT } from '@/utils/app_constants';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 interface NavbarProps {
@@ -34,18 +35,16 @@ function Navbar( props : NavbarProps) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography
-        variant="h6"
-        sx={{ 
-            my: 2,
-            fontSize: { sm: '25px', md: '43px' },
-            fontWeight: 700,
-            color: COLORS.BLACK
-        }}
-      >
-        HOME.PH
-      </Typography>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', zIndex: 99999 }}>
+      <Box sx={{ paddingY: '10px' }}>
+        <Box sx={{ position: 'relative', overflow: 'hidden', height: `calc(${XS_NAVBAR_HEIGHT} - 20px)`, width: '100%'}}>
+          <Image
+              fill
+              src='/assets/logo-with-slogan.svg'
+              alt='house'
+          />
+        </Box>
+      </Box>
       <Divider />
       <List>
         {navItems.map((item, index) => {
@@ -85,6 +84,25 @@ function Navbar( props : NavbarProps) {
 
   return (
     <Box>
+       <Box component="nav" zIndex={9999}>
+        <Drawer
+          disablePortal
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { sm: 'block', md: 'none' },
+            zIndex: 999999,
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+          }}
+        >
+          {drawer}
+        </Drawer>
+      </Box>
       <AppBar
         component="nav"
         sx={{
@@ -109,20 +127,32 @@ function Navbar( props : NavbarProps) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
+          <Box sx={{ paddingY: '10px', width: '100%', display: 'flex'}}>
+          <Box
             sx={{
-                flexGrow: 1,
-                display: 'flex',
-                fontSize: { xs: '18px', sm: '25px', md: '30px' },
-                fontWeight: 900,
-                textAlign: 'left',
-                color: COLORS.BLACK
-            }}
-          >
-            HOME.PH
-          </Typography>
+              position: 'relative',
+              overflow: 'hidden',
+              height: {
+                  xs: `calc(${XS_NAVBAR_HEIGHT} - 20px)`,
+                  sm: `calc(${XS_NAVBAR_HEIGHT} - 20px)`,
+                  md: `calc(${MD_NAVBAR_HEIGHT} - 20px)`,
+                  lg: `calc(${MD_NAVBAR_HEIGHT} - 20px)`
+                },
+              minWidth: { 
+                  xs: '130px',
+                  sm: '130px',
+                  md: '180px',
+                  lg: '180px'
+                } 
+              }}
+            >
+            <Image
+                fill
+                src='/assets/logo-with-slogan.svg'
+                alt='house'
+            />
+          </Box>
+        </Box>
           <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex' }}}>
           <List sx={{
             display: 'flex',
@@ -171,7 +201,7 @@ function Navbar( props : NavbarProps) {
                 fontWeight: 600,
                 lineHeight: '25px',
                 textAlign: 'left',
-                minWidth: { xs: 'max-content', sm: '40px', md: '157px' },
+                minWidth: { xs: 'max-content', sm: 'max-content', md: '157px', lg: '157px' },
                 height: { xs: '40px',sm: '40px', md: '45px' },
                 ':hover': {
                     backgroundColor: 'unset'
@@ -189,7 +219,7 @@ function Navbar( props : NavbarProps) {
                 fontWeight: 600,
                 lineHeight: '25px',
                 textAlign: 'left',
-                minWidth: { xs: 'max-content', sm: '40px', md: '157px' },
+                minWidth: { xs: 'max-content', sm: 'max-content', md: '157px', lg: '157px' },
                 height: { xs: '40px', sm: '40px', md: '45px' },
                 borderRadius: '15px'
               }}
@@ -199,23 +229,6 @@ function Navbar( props : NavbarProps) {
           </Box>
         </Toolbar>
       </AppBar>
-      <Box component="nav" zIndex={9999}>
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { sm: 'block', md: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-        >
-          {drawer}
-        </Drawer>
-      </Box>
     </Box>
   )
 }
