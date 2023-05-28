@@ -207,3 +207,78 @@ export const properties = [
       createdAt: new Date()
     },
   ]
+
+export const galleryImagesData = {
+    totalPhotos: 17,
+    images: [
+      {
+        img: '/assets/image-1.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-2.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-3.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-4.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-5.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-2.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-3.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-4.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-3.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-4.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-3.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-4.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-4.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-3.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-4.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-3.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-4.jpg',
+        title: 'house',
+      },
+    ]
+}
+  
