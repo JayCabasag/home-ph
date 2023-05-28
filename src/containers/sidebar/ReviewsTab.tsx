@@ -30,8 +30,8 @@ const ReviewsTab = ({ property, totalStarRatings } : ReviewsTabProps ) => {
       <Box
         sx={{
           display: 'flex',
-          paddingX: { xs: '6px', sm: '6px', md: '26px', lg: '26px' },
-          paddingY: '15px',
+          paddingX: { xs: '6px', sm: '6px', md: '25px', lg: '25px' },
+          paddingY: { xs: '8px', sm: '8px', md: '15px', lg: '15px' },
           alignItems: 'center',
           justifyContent: 'center',
           gap: { xs: '12px', sm: '12px', md: '26px', lg: '26px' }
@@ -41,7 +41,7 @@ const ReviewsTab = ({ property, totalStarRatings } : ReviewsTabProps ) => {
           <List>
             {ratingGraph.map((rating, index) => {
               return (
-                <ListItem key={index} sx={{ display: 'flex', gap: '25px', minWidth: 180, border: '1px solid red' }}>
+                <ListItem key={index} sx={{ display: 'flex', gap: '25px', minWidth: 180 }}>
                 <Typography
                   sx={{
                     fontFamily: 'Inter',
