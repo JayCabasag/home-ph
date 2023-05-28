@@ -14,10 +14,6 @@ interface ReviewsTabProps {
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   height: 12,
-  [theme.breakpoints.up('xs')]: { width: 170 },
-  [theme.breakpoints.up('sm')]: { width: 170 },
-  [theme.breakpoints.up('md')]: { width: 220 },
-  [theme.breakpoints.up('lg')]: { width: 220 },
   borderRadius: 12,
   [`&.${linearProgressClasses.colorPrimary}`]: {
     backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 200 : 800],
@@ -38,14 +34,14 @@ const ReviewsTab = ({ property, totalStarRatings } : ReviewsTabProps ) => {
           paddingY: '15px',
           alignItems: 'center',
           justifyContent: 'center',
-          gap: { xs: '12px', sm: '16px', md: '26px', lg: '26px' }
+          gap: { xs: '12px', sm: '12px', md: '26px', lg: '26px' }
         }}
       >
         <Box>
           <List>
             {ratingGraph.map((rating, index) => {
               return (
-                <ListItem key={index} sx={{ display: 'flex', gap: '25px' }}>
+                <ListItem key={index} sx={{ display: 'flex', gap: '25px', minWidth: 180, border: '1px solid red' }}>
                 <Typography
                   sx={{
                     fontFamily: 'Inter',
@@ -56,7 +52,7 @@ const ReviewsTab = ({ property, totalStarRatings } : ReviewsTabProps ) => {
                     textAlign: 'left',
                   }}
                 >{rating.star}</Typography>
-                <BorderLinearProgress variant="determinate" value={rating.value} />
+                <BorderLinearProgress variant="determinate" value={rating.value} sx={{ width: { xs: 180, sm: 220, md: 220, lg: 250 } }}/>
               </ListItem>
               )
             })}
@@ -131,6 +127,9 @@ const ReviewsTab = ({ property, totalStarRatings } : ReviewsTabProps ) => {
       >
         <Button
           variant='outlined'
+          sx={{
+            textTransform: 'capitalize'
+          }}
           startIcon={<ChatOutlinedIcon />}
         >
           write a review

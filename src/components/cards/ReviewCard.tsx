@@ -42,7 +42,7 @@ export default function ReviewCard({comment}: ReviewCardProps) {
         <Typography
           sx={{
             mb: 1,
-            fontSize: { xs: '16px', sm: '16px', md: '17px', lg: '17px' },
+            fontSize: { xs: '14px', sm: '14px', md: '17px', lg: '17px' },
             fontWeight: 600
          }}
         >
@@ -50,7 +50,7 @@ export default function ReviewCard({comment}: ReviewCardProps) {
         </Typography>
         <Typography
               sx={{
-                fontSize: { xs: '14px', sm: '14px', md: '15px', lg: '15px' },
+                fontSize: { xs: '13px', sm: '13px', md: '15px', lg: '15px' },
                 fontWeight: 500,
                 color: '#A89797'
               }}
@@ -86,7 +86,7 @@ export default function ReviewCard({comment}: ReviewCardProps) {
             <Typography
               sx={{
                 marginLeft: '15px',
-                fontSize: { xs: '14px', sm: '14px', md: '15px', lg: '15px' },
+                fontSize: { xs: '13px', sm: '13px', md: '15px', lg: '15px' },
                 fontWeight: 600
               }}
             >
