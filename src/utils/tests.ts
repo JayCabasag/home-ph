@@ -172,6 +172,7 @@ export const properties = [
       reviews: {
         rating: 4,
         remarks: 'Amazing',
+        images: ['/assets/image-1.jpg', '/assets/image-3.jpg', '/assets/image-2.jpg'],
         message: 'I am extemely happy with the recent purchase of a new home from Company name. The entire process'
       },
       createdAt: new Date()
@@ -185,8 +186,24 @@ export const properties = [
       reviews: {
         rating: 3.5,
         remarks: 'Cool',
+        images: [],
         message: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque obcaecati dolor non sint totam, maxime tenetur molestiae atque maiores similique odio quos distinctio enim, ratione voluptatibus perspiciatis assumenda velit aliquid expedita. Repellendus, velit. Optio, quibusdam beatae cum nesciunt ad dolorum.'
       },
       createdAt: new Date()
-    }
+    },
+    {
+      id: '123ddd',
+      user: { 
+        id: '1212ff',
+        name: 'John Doe',
+        residences: 'Excalibur Residences'
+      },
+      reviews: {
+        rating: 4,
+        remarks: 'Amazing',
+        images: [],
+        message: 'I am extemely happy with the recent purchase of a new home from Company name.'
+      },
+      createdAt: new Date()
+    },
   ]

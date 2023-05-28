@@ -16,6 +16,7 @@ const MAX_TOTAL_COMMENT = 180
 export default function ReviewCard({comment}: ReviewCardProps) {
 
     const message = comment.reviews.message
+    const images = comment.reviews.images ?? []
     const isMessageLong = message.split('').length >= MAX_TOTAL_COMMENT
     const [isShowLongMessage, setIsShowLongMessage] = useState(false)
     const [totalStarRatings, setTotalStarRatings] = useState<number[]>([])
@@ -91,6 +92,25 @@ export default function ReviewCard({comment}: ReviewCardProps) {
             >
                 {comment.reviews.remarks}
             </Typography>
+        </Box>
+        <Box
+          sx={{
+            marginTop: '15px',
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '15px'
+          }}
+        >
+            {images.length > 0 && images.map((image: string, index: number) => {
+            return (
+                <Box sx={{ cursor: 'pointer', position: 'relative', overflow: 'hidden', height: '120px', width: '100%'}} key={index}>
+                    <Image
+                        fill
+                        src={image}
+                        alt='rating-star'
+                    />
+                </Box>)
+            })}
         </Box>
         <Typography
           variant="body2"

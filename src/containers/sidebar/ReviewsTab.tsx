@@ -37,7 +37,8 @@ const ReviewsTab = ({ property, totalStarRatings } : ReviewsTabProps ) => {
           paddingX: { xs: '6px', sm: '6px', md: '26px', lg: '26px' },
           paddingY: '15px',
           alignItems: 'center',
-          gap: { xs: '12px', sm: '12px', md: '26px', lg: '26px' }
+          justifyContent: 'center',
+          gap: { xs: '12px', sm: '16px', md: '26px', lg: '26px' }
         }}
       >
         <Box>
@@ -66,6 +67,7 @@ const ReviewsTab = ({ property, totalStarRatings } : ReviewsTabProps ) => {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            justifyContent: 'center',
             gap: '5px'
           }}
         >
