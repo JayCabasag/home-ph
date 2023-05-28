@@ -3,6 +3,7 @@ export const properties = [
       id: '123',
       name: 'Oakwood Apartments',
       rating: 4,
+      totalRated: 115,
       type: ['Apartment', 'Condo'],
       reviews: [],
       mainImage: '/assets/image-1.jpg',
@@ -24,6 +25,7 @@ export const properties = [
       id: '1234',
       name: 'Maple Heights',
       rating: 3.4,
+      totalRated: 100,
       type: ['House'],
       reviews: [],
       mainImage: '/assets/image-4.jpg',
@@ -45,6 +47,7 @@ export const properties = [
       id: '1235',
       name: 'Pineview Villas',
       rating: 5,
+      totalRated: 55,
       type: ['Apartment', 'Condo', 'Commercial', 'Industrial'],
       reviews: [],
       mainImage: '/assets/image-3.jpg',
@@ -66,6 +69,7 @@ export const properties = [
       id: '1267',
       name: 'Sunset Terrace',
       rating: 2.3,
+      totalRated: 5,
       type: ['House'],
       reviews: [],
       mainImage: '/assets/image-4.jpg',
@@ -87,6 +91,7 @@ export const properties = [
       id: '1244',
       name: 'Riverbend Estates',
       rating: 4,
+      totalRated: 40,
       type: ['Apartment'],
       reviews: [],
       mainImage: '/assets/image-5.jpg',
@@ -147,3 +152,133 @@ export const properties = [
       rating: 4
     }
   ]
+
+  export const ratingGraph = [
+    {id: 'asrdf', star: 5, value: 70},
+    {id: 'asrdf32',star: 4, value: 13},
+    {id: 'AFdasrdf',star: 3, value: 12},
+    {id: 'saWWasrdf',star: 2, value: 50},
+    {id: '09GGasrdf',star: 1, value: 10}
+  ]
+
+  export const comments = [
+    {
+      id: '123ddd',
+      user: { 
+        id: '1212ff',
+        name: 'John Doe',
+        residences: 'Excalibur Residences'
+      },
+      reviews: {
+        rating: 4,
+        remarks: 'Amazing',
+        images: ['/assets/image-1.jpg', '/assets/image-3.jpg', '/assets/image-2.jpg'],
+        message: 'I am extemely happy with the recent purchase of a new home from Company name. The entire process'
+      },
+      createdAt: new Date()
+    },
+    {
+      id: '123ddd2',
+      user: { 
+        id: '1212fssf',
+        name: 'Jason Yup'
+      },
+      reviews: {
+        rating: 3.5,
+        remarks: 'Cool',
+        images: [],
+        message: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque obcaecati dolor non sint totam, maxime tenetur molestiae atque maiores similique odio quos distinctio enim, ratione voluptatibus perspiciatis assumenda velit aliquid expedita. Repellendus, velit. Optio, quibusdam beatae cum nesciunt ad dolorum.'
+      },
+      createdAt: new Date()
+    },
+    {
+      id: '123ddd',
+      user: { 
+        id: '1212ff',
+        name: 'John Doe',
+        residences: 'Excalibur Residences'
+      },
+      reviews: {
+        rating: 4,
+        remarks: 'Amazing',
+        images: [],
+        message: 'I am extemely happy with the recent purchase of a new home from Company name.'
+      },
+      createdAt: new Date()
+    },
+  ]
+
+export const galleryImagesData = {
+    totalPhotos: 17,
+    images: [
+      {
+        img: '/assets/image-1.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-2.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-3.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-4.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-5.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-2.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-3.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-4.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-3.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-4.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-3.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-4.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-4.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-3.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-4.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-3.jpg',
+        title: 'house',
+      },
+      {
+        img: '/assets/image-4.jpg',
+        title: 'house',
+      },
+    ]
+}
+  

@@ -241,14 +241,6 @@ const OverviewTab = () => {
           {localConvenienceList.map((localConvenience, index) => {
             return (
             <ListItem key={index} sx={{ display: 'flex', gap: '15px' }}>
-              {/* <Box sx={{ position: 'relative', overflow: 'hidden', minHeight: '26px', minWidth: '26px'}} >
-                  <Image
-                      fill
-                      src={propertyMainInfoOption.asset}
-                      alt='option'
-                      style={{ zIndex: 2 }}
-                  />
-              </Box> */}
               <RadioButtonUncheckedIcon sx={{ height: '12px', width: '12px' }}/>
               <Typography
                  sx={{

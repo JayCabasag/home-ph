@@ -7,7 +7,8 @@ export const COLORS = {
     ALPHA_RED: '#ff0000b3',
     ALPHA_BLACK: '#000000DE',
     GRAY: '#7D7B82',
-    INACTIVE_GRAY: '#A5A2A7'
+    INACTIVE_GRAY: '#A5A2A7',
+    YELLOW: '#FBBC04'
 }
 
 export const IMAGES = {

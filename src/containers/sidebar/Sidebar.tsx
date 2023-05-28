@@ -8,6 +8,7 @@ import Image from 'next/image';
 import OverviewTab from './OverviewTabs';
 import ReviewsTab from './ReviewsTab';
 import GalleryTab from './GalleryTab';
+import { galleryImagesData } from '@/utils/tests';
 
 
 const sidebarTab = ['overview', 'reviews', 'gallery']
@@ -25,6 +26,8 @@ export default function Sidebar({ property, open, handleToggleSidebar }: Sidebar
     const propertyCategory = property.category
     const isForRent = propertyCategory === PropertyCategory.FOR_RENT
     const isForSale = propertyCategory === PropertyCategory.FOR_SALE
+    const galleryImages = galleryImagesData.images
+    const totalGalleryImages = galleryImagesData.totalPhotos
 
     const generateStars = (ratingValue: number) => {
         let rating = ratingValue
@@ -161,7 +164,7 @@ export default function Sidebar({ property, open, handleToggleSidebar }: Sidebar
                             lineHeight: '23px',
                             letterSpacing: '0em',
                             textAlign: 'left',                  
-                        }}>({10})</Typography>
+                        }}>({property.totalRated})</Typography>
                     </Box>
                     <Box sx={{
                         marginTop: {xs: '6px', sm: '6px',md: '13px', lg: '13px'},
@@ -212,9 +215,9 @@ export default function Sidebar({ property, open, handleToggleSidebar }: Sidebar
                             })}
                         </List>
                     </Box>
-                    {selectedTab === 'overview' && <OverviewTab />}
-                    {selectedTab === 'reviews' && <ReviewsTab />}
-                    {selectedTab === 'gallery' && <GalleryTab />}
+                    {selectedTab === 'overview' && <OverviewTab key={selectedTab}/>}
+                    {selectedTab === 'reviews' && <ReviewsTab key={selectedTab} property={property} totalStarRatings={totalStarRatings}/>}
+                    {selectedTab === 'gallery' && <GalleryTab key={selectedTab} totalImages={totalGalleryImages} images={galleryImages}/>}
                 </Box>
             </Drawer>
         </Box>
