@@ -161,7 +161,7 @@ export default function Sidebar({ property, open, handleToggleSidebar }: Sidebar
                             lineHeight: '23px',
                             letterSpacing: '0em',
                             textAlign: 'left',                  
-                        }}>({10})</Typography>
+                        }}>({property.totalRated})</Typography>
                     </Box>
                     <Box sx={{
                         marginTop: {xs: '6px', sm: '6px',md: '13px', lg: '13px'},
@@ -213,7 +213,7 @@ export default function Sidebar({ property, open, handleToggleSidebar }: Sidebar
                         </List>
                     </Box>
                     {selectedTab === 'overview' && <OverviewTab />}
-                    {selectedTab === 'reviews' && <ReviewsTab />}
+                    {selectedTab === 'reviews' && <ReviewsTab property={property} totalStarRatings={totalStarRatings}/>}
                     {selectedTab === 'gallery' && <GalleryTab />}
                 </Box>
             </Drawer>

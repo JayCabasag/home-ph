@@ -19,7 +19,7 @@ const discoveries = [
 ]
 
 export default function Home() {
-
+  const isMobileScreen = useMediaQuery('(max-width: 768px)');
   return (
     <>
       <Head>
@@ -28,7 +28,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <SectionWrapper>
+      <SectionWrapper heightAuto={!isMobileScreen}>
        <Box
         sx={{
           width: { xs: '100%', md: '50%' },
@@ -121,7 +121,7 @@ export default function Home() {
 
        </Box>
       </SectionWrapper>
-      <SectionWrapper>
+      <SectionWrapper heightAuto={!isMobileScreen}>
       <Box sx={{
         position: 'absolute',
         width: { xs: 'calc(100% - 32px)', sm: '100%', md: '100%', lg: '100%' },
@@ -221,7 +221,7 @@ export default function Home() {
         </Button>
        </Box>
       </SectionWrapper>
-      <SectionWrapper>
+      <SectionWrapper heightAuto={!isMobileScreen}>
       <Box
         sx={{
           width: { xs: '100%', md: '50%' },
@@ -254,7 +254,7 @@ export default function Home() {
             fontFamily: 'Inter',
             fontStyle: 'normal',
             fontWeight: 500,
-            fontSize: { xs: '14px', md: '17px' },
+            fontSize: { xs: '14px', sm: '14px', md: '17px', lg: '17px' },
             lineHeight: '27px',
             marginTop: '31px',
             color: COLORS.GRAY
@@ -264,7 +264,7 @@ export default function Home() {
         </Typography>
         <Box
           sx={{
-            marginTop:  { xs: '34px', sm: '34px', md: '62px', lg: '82px' },
+            marginTop:  { xs: '16px', sm: '16px', md: '16px', lg: '62px' },
             display: { xs: 'flex', md: 'grid'},
             flexDirection: 'column',
             gridTemplateColumns: '1fr 1fr', // Two columns with equal width
@@ -320,7 +320,7 @@ export default function Home() {
         </Box>
        </Box>
       </SectionWrapper>
-      <SectionWrapper heightAuto>
+      <SectionWrapper heightAuto={!isMobileScreen}>
       <Box sx={{ width: '100%', paddingTop: { xs: '30px', sm: '30px', md: '100px', lg: '100px' }, }}>
         <Box
           sx={{
