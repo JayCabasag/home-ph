@@ -24,7 +24,7 @@ export default function ResidentCard({ property }: ResidentCardProps) {
   }
   
   return (
-    <Card sx={{ maxWidth: 380, height: '100%', display: 'flex', flexDirection: 'column'}}>
+    <Card sx={{ maxWidth: 420, height: '100%', display: 'flex', flexDirection: 'column'}}>
       <Sidebar property={property} open={showSidebar} handleToggleSidebar={handleToggleSidebar}/>
       <CardActionArea sx={{flex: 1, position: 'relative'}} onClick={handleToggleSidebar}>
         <Box
