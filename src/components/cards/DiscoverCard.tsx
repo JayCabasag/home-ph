@@ -5,14 +5,14 @@ import Typography from '@mui/material/Typography';
 import { COLORS } from '@/utils/app_constants';
 
 interface DiscoverCardProps {
-    total: string,
-    message: string
+  total: string,
+  message: string
 }
 
-export default function DiscoverCard({ total, message }:  DiscoverCardProps ) {
+export default function DiscoverCard({ total, message }: DiscoverCardProps) {
   return (
     <Card
-      sx={{ 
+      sx={{
         height: { xs: '110px', md: '145px' },
         backgroundColor: 'transparent',
         boxShadow: 'none',
@@ -23,7 +23,7 @@ export default function DiscoverCard({ total, message }:  DiscoverCardProps ) {
         <Typography
           sx={{
             fontFamily: 'Inter',
-            fontSize: { xs: '32px',sm: '35px', md: '40px', lg: '55px' },
+            fontSize: { xs: '32px', sm: '35px', md: '40px', lg: '55px' },
             fontWeight: 700,
             lineHeight: '34px',
             letterSpacing: '0em',
@@ -38,12 +38,12 @@ export default function DiscoverCard({ total, message }:  DiscoverCardProps ) {
           sx={{
             maxWidth: '190px',
             fontFamily: 'Inter',
-            fontSize: { xs: '14px',sm: '14px', md: '14px', lg: '17px'},
+            fontSize: { xs: '14px', sm: '14px', md: '14px', lg: '17px' },
             fontWeight: 500,
             lineHeight: '25px',
             letterSpacing: '0em',
             textAlign: 'left',
-         }}
+          }}
           color="text.secondary"
           gutterBottom
         >

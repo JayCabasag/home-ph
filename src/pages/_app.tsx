@@ -7,6 +7,7 @@ import createEmotionCache from '@/utils/createEmotionCache'
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Head from 'next/head'
+import '@/styles/swiper/styles.css'
 
 const clientSideEmotionCache = createEmotionCache();
 

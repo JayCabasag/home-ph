@@ -32,8 +32,8 @@ const OverviewTab = () => {
                           <Box sx={{ 
                             position: 'relative', 
                             overflow: 'hidden', 
-                            height: {xs: '20px', sm: '20px',md: '26px',lg: '26px'}, 
-                            width: {xs: '20px', sm: '20px',md: '26px',lg: '26px'}, 
+                            height: {xs: '20px', sm: '20px',md: '26px', lg: '26px'}, 
+                            width: {xs: '20px', sm: '20px',md: '26px', lg: '26px'}, 
                           }} key={index}>
                               <Image
                                   fill
@@ -75,7 +75,7 @@ const OverviewTab = () => {
         <Typography
           sx={{
             fontFamily: 'Inter',
-            fontSize: { xs: '16px', sm: '16px', md: '19px', lg: '19px' },
+            fontSize: { xs: '16px', sm: '16px', md: '18px', lg: '18px' },
             fontWeight: 500,
             lineHeight: '23px',
             letterSpacing: '0em',
@@ -90,9 +90,9 @@ const OverviewTab = () => {
             textTransform: 'capitalize',
             fontFamily: 'Inter',
             fontStyle: 'normal',
-            fontSize: { xs: '14px', sm: '14px', md: '16px', lg: '16px' },
+            fontSize: { xs: '14px', sm: '14px', md: '15px', lg: '15px' },
             fontWeight: 500,
-            lineHeight: '25px',
+            lineHeight: '20px',
             textAlign: 'left',
             width: { xs: '40px', sm: '40px', md: '95px', lg: '157px' },
             height: { xs: '35px', sm: '35px', md: '40px', lg: '40px' },
@@ -142,7 +142,7 @@ const OverviewTab = () => {
         <Typography
           sx={{
             fontFamily: 'Inter',
-            fontSize: { xs: '16px', sm: '16px', md: '19px', lg: '19px' },
+            fontSize: { xs: '15px', sm: '15px', md: '17px', lg: '17px' },
             fontWeight: 500,
             lineHeight: '23px',
             letterSpacing: '0em',
@@ -179,7 +179,7 @@ const OverviewTab = () => {
         <Typography
           sx={{
             fontFamily: 'Inter',
-            fontSize: { xs: '16px', sm: '16px', md: '19px', lg: '19px' },
+            fontSize: { xs: '15px', sm: '15px', md: '17px', lg: '17px' },
             fontWeight: 500,
             lineHeight: '23px',
             letterSpacing: '0em',
@@ -222,7 +222,7 @@ const OverviewTab = () => {
         <Typography
           sx={{
             fontFamily: 'Inter',
-            fontSize: { xs: '16px', sm: '16px', md: '19px', lg: '19px' },
+            fontSize: { xs: '15px', sm: '15px', md: '17px', lg: '17px' },
             fontWeight: 500,
             lineHeight: '23px',
             letterSpacing: '0em',
