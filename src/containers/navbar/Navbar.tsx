@@ -13,7 +13,6 @@ import { COLORS, MD_NAVBAR_HEIGHT, XS_NAVBAR_HEIGHT } from '@/utils/app_constant
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
-import NavLinks from '@/components/navbar/NavLink';
 import NavLink from '@/components/navbar/NavLink';
 
 
@@ -34,7 +33,7 @@ function Navbar(props: NavbarProps) {
   const onFeaturedPage = activePath === '/featured' || activePath === '/featured/[id]'
   const onPropertiesPage = activePath === '/properties'
   const onAboutPage = activePath === '/about-us'
-  
+
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
