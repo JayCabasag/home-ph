@@ -72,7 +72,7 @@ export default function Home() {
 
           <Typography
             sx={{
-              marginTop: { xs: '50px', md: '117px' },
+              marginTop: { xs: '50px', sm: '50px', md: '80px', lg: '100px' },
               fontFamily: 'Inter',
               fontStyle: 'normal',
               fontWeight: 600,
@@ -96,8 +96,8 @@ export default function Home() {
                   <Image
                     src={partnerImage}
                     alt={`partner-${partnerImage}`}
-                    height={62}
-                    width={150}
+                    height={60}
+                    width={130}
                   />
                 </Box>
               )
@@ -107,7 +107,7 @@ export default function Home() {
         <Box
           sx={{
             width: { xs: '100%', md: '50%' },
-            height: { xs: 'calc(100vh - 250px)', md: `calc(100vh - ${MD_NAVBAR_HEIGHT})` },
+            height: { xs: 'calc(100vh - 200px)',sm: 'calc(100vh - 200px)', md: `calc(100vh - ${MD_NAVBAR_HEIGHT})`, lg: `calc(100vh - ${MD_NAVBAR_HEIGHT})` },
             position: 'relative', // Set the Box position to relative
             overflow: 'hidden' // Hide any overflow from the Image
           }}
@@ -144,8 +144,8 @@ export default function Home() {
         >
           <Box
             sx={{
-              width: { xs: '100%', md: '503px' },
-              height: { xs: '100%', md: '607px' },
+              width: { xs: '100%', sm: '100%', md: '503px', lg: '607px' },
+              height: { xs: 'calc(100% - 100px)', sm: 'calc(100% - 100px)', md: '607px', lg: '607px' },
               position: 'relative', // Set the Box position to relative
               overflow: 'hidden' // Hide any overflow from the Image
             }}

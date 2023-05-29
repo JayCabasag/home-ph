@@ -100,7 +100,7 @@ const Footer = () => {
                     <Box>
                         <Typography sx={{
                             fontFamily: 'Inter',
-                            fontSize: '19px',
+                            fontSize: { xs: '15px', sm: '15px', md: '19px', lg: '19px' },
                             fontWeight: 600,
                             lineHeight: '30px',
                             letterSpacing: '0em',
@@ -133,7 +133,7 @@ const Footer = () => {
                     <Box>
                         <Typography sx={{
                             fontFamily: 'Inter',
-                            fontSize: '19px',
+                            fontSize: { xs: '15px', sm: '15px', md: '19px', lg: '19px' },
                             fontWeight: 600,
                             lineHeight: '30px',
                             letterSpacing: '0em',
@@ -164,7 +164,7 @@ const Footer = () => {
                     <Box>
                         <Typography sx={{
                             fontFamily: 'Inter',
-                            fontSize: '19px',
+                            fontSize: { xs: '15px', sm: '15px', md: '19px', lg: '19px' },
                             fontWeight: 600,
                             lineHeight: '30px',
                             letterSpacing: '0em',

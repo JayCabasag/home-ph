@@ -59,7 +59,7 @@ function Navbar(props: NavbarProps) {
                     fontFamily: 'Inter',
                     color: isActive ? COLORS.BLACK : COLORS.INACTIVE_GRAY,
                     fontSize: { xs: '15px', sm: '15px', md: '17px', lg: '17px' },
-                    fontWeight: 500,
+                    fontWeight: 400,
                     lineHeight: '25px',
                     textAlign: 'left',
                     width: drawerWidth,

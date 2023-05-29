@@ -6,10 +6,13 @@ import SectionWrapper from '@/components/wrappers/PageWrapper'
 import { properties } from '@/utils/tests'
 import ResidentCard from '@/components/cards/ResidentCard'
 import Searcher from '@/components/search/Searcher'
-
-const inter = Inter({ subsets: ['latin'] })
+import FeaturedSwiper from '@/components/swiper/FeaturedSwiper'
+import { galleryImagesData } from '@/utils/tests'
 
 const FeaturedPage = () => {
+
+  const featuredProperties = properties
+
   return (
     <>
       <Head>
@@ -18,6 +21,19 @@ const FeaturedPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Box
+            sx={{
+              width: '100%',
+              padding: { xs: '0', sm: '0', md: '20px 0', lg: '20px 0' },
+              height: { xs: '250px', sm: '250px', md: '450px', lg: '500px' },
+              paddingX: { xs: '0px', sm: '0px', md: '90px', lg: '90px' },
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+            }}
+          >
+        <FeaturedSwiper properties={featuredProperties}/>
+      </Box>
       <SectionWrapper heightAuto>
         <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
           <Box
