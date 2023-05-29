@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { IconButton, Box, useMediaQuery } from '@mui/material';
 import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import Paper, { PaperProps } from '@mui/material/Paper';
 import Draggable from 'react-draggable';
 import Image from 'next/image';
