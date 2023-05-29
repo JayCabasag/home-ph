@@ -3,7 +3,6 @@ import Head from 'next/head'
 import React from 'react'
 import { Box, Typography } from '@mui/material'
 import { COLORS } from '@/utils/app_constants'
-import Searcher from '@/components/search/Searcher'
 
 const PropertyDetailsPage = () => {
   return (
