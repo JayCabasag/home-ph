@@ -13,6 +13,7 @@ import { COLORS, MD_NAVBAR_HEIGHT, XS_NAVBAR_HEIGHT } from '@/utils/app_constant
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
+import NavLink from '@/components/navbar/NavLink';
 
 
 interface NavbarProps {
@@ -27,7 +28,11 @@ function Navbar(props: NavbarProps) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const router = useRouter()
-  const activePath = router.asPath
+  const activePath = router.pathname
+  const onHomePage = activePath === '/' || activePath === ''
+  const onFeaturedPage = activePath === '/featured' || activePath === '/featured/[id]'
+  const onPropertiesPage = activePath === '/properties'
+  const onAboutPage = activePath === '/about-us'
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -157,35 +162,10 @@ function Navbar(props: NavbarProps) {
               display: 'flex',
               color: COLORS.BLACK
             }}>
-              {navItems.map((item, index) => {
-                const isActive = item.path === activePath
-                return (
-                  <ListItem key={index} disablePadding>
-                    <Link href={item.path}>
-                      <Button
-                        variant='text'
-                        disableRipple
-                        sx={{
-                          textTransform: 'capitalize',
-                          fontFamily: 'Inter',
-                          color: isActive ? COLORS.BLACK : COLORS.INACTIVE_GRAY,
-                          fontSize: { xs: '15px', sm: '15px', md: '16px', lg: '16px' },
-                          fontWeight: 500,
-                          lineHeight: '25px',
-                          textAlign: 'left',
-                          width: { xs: '40px', sm: '40px', md: '95px', lg: '157px' },
-                          height: 'auto',
-                          ':hover': {
-                            backgroundColor: 'unset'
-                          },
-                        }}
-                      >
-                        {item.name}
-                      </Button>
-                    </Link>
-                  </ListItem>
-                )
-              })}
+              <NavLink path='/' isActive={onHomePage}>Home</NavLink>
+              <NavLink path='/featured' isActive={onFeaturedPage}>Featured</NavLink>
+              <NavLink path='/properties' isActive={onPropertiesPage}>Properties</NavLink>
+              <NavLink path='/about-us' isActive={onAboutPage}>About us</NavLink>
             </List>
           </Box>
           <Box sx={{ display: 'flex' }}>

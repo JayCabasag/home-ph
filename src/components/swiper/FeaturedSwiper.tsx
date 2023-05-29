@@ -44,7 +44,7 @@ const FeaturedSwiper = ({ properties }: FeaturedSwiperProps ) => {
 
             return (
                 <SwiperSlide key={index}>
-                    <Link href={`/properties/${property.id}`} style={{ color: COLORS.BLACK }}>
+                    <Link href={`/featured/${property.id}`} style={{ color: COLORS.BLACK }}>
                       <Box
                         sx={{
                           position: 'relative', 
