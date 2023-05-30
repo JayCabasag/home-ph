@@ -281,4 +281,10 @@ export const galleryImagesData = {
       },
     ]
 }
-  
+
+export const founders = [
+  {id: '1234', image: "/assets/image-profile-1.jpg", name: 'John Doe', title: 'Head Programmer - Development Team', description: 'He is the main founder'},
+  {id: '12344', image: '/assets/image-profile-2.jpg', name: 'Jackson Gate', title: 'Marketing and Promotions - Design Team', description: 'A real estate agent for the past 5 years'},
+  {id: '12344', image: '/assets/image-profile-2.jpg', name: 'Mark Jack', title: 'Digital marketing - Design Team', description: 'A real estate agent for the past 5 years'},
+  {id: '12344', image: '/assets/image-profile-2.jpg', name: 'Jason Mike', title: 'Head strategist - Real Estate Experts', description: 'A real estate agent for the past 5 years'}
+]
