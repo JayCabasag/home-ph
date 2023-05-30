@@ -21,7 +21,7 @@ interface NavbarProps {
 }
 
 
-const drawerWidth = 240;
+const drawerWidth = 260;
 const navItems = [{ name: 'Home', path: '/' }, { name: 'Featured', path: '/featured' }, { name: 'Properties', path: '/properties' }, { name: 'About us', path: '/about-us' }];
 
 function Navbar(props: NavbarProps) {
@@ -143,8 +143,8 @@ function Navbar(props: NavbarProps) {
                   lg: `calc(${MD_NAVBAR_HEIGHT} - 20px)`
                 },
                 minWidth: {
-                  xs: '130px',
-                  sm: '130px',
+                  xs: '150px',
+                  sm: '150px',
                   md: '180px',
                   lg: '180px'
                 }
