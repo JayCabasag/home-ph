@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import { Container, Box, Typography, Button } from '@mui/material'
 import { COLORS } from '@/utils/app_constants'
 import SectionWrapper from '@/components/wrappers/PageWrapper'
-import { properties } from '@/utils/tests'
+import { featuredLists, properties } from '@/utils/tests'
 import ResidentCard from '@/components/cards/ResidentCard'
 import Searcher from '@/components/search/Searcher'
 import FeaturedSwiper from '@/components/swiper/FeaturedSwiper'
@@ -11,7 +11,7 @@ import { galleryImagesData } from '@/utils/tests'
 
 const FeaturedPage = () => {
 
-  const featuredProperties = properties
+  const featuredProperties = featuredLists
 
   return (
     <>
@@ -32,7 +32,7 @@ const FeaturedPage = () => {
               justifyContent: 'space-between',
             }}
           >
-        <FeaturedSwiper properties={featuredProperties}/>
+        <FeaturedSwiper featuredLists={featuredProperties}/>
       </Box>
       <SectionWrapper heightAuto>
         <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column' }}>

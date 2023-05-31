@@ -288,3 +288,429 @@ export const founders = [
   {id: '12344', image: '/assets/image-profile-2.jpg', name: 'Mark Jack', title: 'Digital marketing - Design Team', description: 'A real estate agent for the past 5 years'},
   {id: '12344', image: '/assets/image-profile-2.jpg', name: 'Jason Mike', title: 'Head strategist - Real Estate Experts', description: 'A real estate agent for the past 5 years'}
 ]
+
+export const featuredLists = [
+  {
+    id: '123444dsds',
+    name: 'Ayala Malls',
+    coverImage: '/assets/ayala-malls-cover.jpg',
+    properties: [
+      {
+        id: '1267',
+        name: 'Sunset Terrace',
+        rating: 2.3,
+        totalRated: 5,
+        type: ['House'],
+        reviews: [],
+        mainImage: '/assets/image-4.jpg',
+        contact: ['Contact 7', 'Contact 8'],
+        address: 'Taguig City, PH',
+        images: {
+          front: 'front4.jpg',
+          back: 'back4.jpg',
+          interior: 'interior4.jpg',
+          top: 'top4.jpg'
+        },
+        category: 'for-rent',
+        price: {
+          amount: 10000,
+          type: 'month'
+        }
+      },
+      {
+        id: '1244',
+        name: 'Riverbend Estates',
+        rating: 4,
+        totalRated: 40,
+        type: ['Apartment'],
+        reviews: [],
+        mainImage: '/assets/image-5.jpg',
+        contact: ['Contact 9', 'Contact 10'],
+        address: 'Lipa City, PH',
+        images: {
+          front: 'front5.jpg',
+          back: 'back5.jpg',
+          interior: 'interior5.jpg',
+          top: 'top5.jpg'
+        },
+        category: 'for-rent',
+        price: {
+          amount: 8000,
+          type: 'month'
+        }
+      }
+    ]
+  },
+  {
+    id: '123444dsd434s',
+    name: 'Camella Homes',
+    coverImage: '/assets/camilla-homes-cover.webp',
+    properties: [
+      {
+        id: '1244323',
+        name: 'Riverbend Estates',
+        rating: 4,
+        totalRated: 40,
+        type: ['Apartment'],
+        reviews: [],
+        mainImage: '/assets/image-2.jpg',
+        contact: ['Contact 9', 'Contact 10'],
+        address: 'Lipa City, PH',
+        images: {
+          front: 'front5.jpg',
+          back: 'back5.jpg',
+          interior: 'interior5.jpg',
+          top: 'top5.jpg'
+        },
+        category: 'for-rent',
+        price: {
+          amount: 8000,
+          type: 'month'
+        }
+      },
+      {
+        id: '1244wqw',
+        name: 'Camilla home Lipa',
+        rating: 4,
+        totalRated: 40,
+        type: ['Apartment'],
+        reviews: [],
+        mainImage: '/assets/image-1.jpg',
+        contact: ['Contact 9', 'Contact 10'],
+        address: 'Lipa City, PH',
+        images: {
+          front: 'front5.jpg',
+          back: 'back5.jpg',
+          interior: 'interior5.jpg',
+          top: 'top5.jpg'
+        },
+        category: 'for-rent',
+        price: {
+          amount: 8000,
+          type: 'month'
+        }
+      },
+      {
+        id: '1244wqwq323',
+        name: 'Camella homes Cavite',
+        rating: 4,
+        totalRated: 40,
+        type: ['Apartment'],
+        reviews: [],
+        mainImage: '/assets/image-1.jpg',
+        contact: ['Contact 9', 'Contact 10'],
+        address: 'Cavite, PH',
+        images: {
+          front: 'front5.jpg',
+          back: 'back5.jpg',
+          interior: 'interior5.jpg',
+          top: 'top5.jpg'
+        },
+        category: 'for-rent',
+        price: {
+          amount: 8000,
+          type: 'month'
+        }
+      }
+    ]
+  },
+  {
+    id: '123444dsd434s',
+    name: 'SM Prime',
+    coverImage: '/assets/sm-prime-cover.jpg',
+    properties: [
+      {
+        id: '1244323',
+        name: 'Light Residences',
+        rating: 4,
+        totalRated: 40,
+        type: ['Apartment'],
+        reviews: [],
+        mainImage: '/assets/image-2.jpg',
+        contact: ['Contact 9', 'Contact 10'],
+        address: 'Lipa City, PH',
+        images: {
+          front: 'front5.jpg',
+          back: 'back5.jpg',
+          interior: 'interior5.jpg',
+          top: 'top5.jpg'
+        },
+        category: 'for-rent',
+        price: {
+          amount: 8000,
+          type: 'month'
+        }
+      },
+      {
+        id: '1244wqw',
+        name: 'Camilla home Lipa',
+        rating: 4,
+        totalRated: 40,
+        type: ['Apartment'],
+        reviews: [],
+        mainImage: '/assets/image-1.jpg',
+        contact: ['Contact 9', 'Contact 10'],
+        address: 'Lipa City, PH',
+        images: {
+          front: 'front5.jpg',
+          back: 'back5.jpg',
+          interior: 'interior5.jpg',
+          top: 'top5.jpg'
+        },
+        category: 'for-rent',
+        price: {
+          amount: 8000,
+          type: 'month'
+        }
+      },
+      {
+        id: '1244wqwq323',
+        name: 'Camilla home Cavite',
+        rating: 4,
+        totalRated: 40,
+        type: ['Apartment'],
+        reviews: [],
+        mainImage: '/assets/image-1.jpg',
+        contact: ['Contact 9', 'Contact 10'],
+        address: 'Cavite, PH',
+        images: {
+          front: 'front5.jpg',
+          back: 'back5.jpg',
+          interior: 'interior5.jpg',
+          top: 'top5.jpg'
+        },
+        category: 'for-rent',
+        price: {
+          amount: 8000,
+          type: 'month'
+        }
+      }
+    ]
+  },
+  {
+    id: '1234ss44dsd434ssasa',
+    name: 'Mega world',
+    coverImage: '/assets/mega-world-cover.png',
+    properties: [
+      {
+        id: '1244323',
+        name: 'Light Residences',
+        rating: 4,
+        totalRated: 40,
+        type: ['Apartment'],
+        reviews: [],
+        mainImage: '/assets/image-2.jpg',
+        contact: ['Contact 9', 'Contact 10'],
+        address: 'Lipa City, PH',
+        images: {
+          front: 'front5.jpg',
+          back: 'back5.jpg',
+          interior: 'interior5.jpg',
+          top: 'top5.jpg'
+        },
+        category: 'for-rent',
+        price: {
+          amount: 8000,
+          type: 'month'
+        }
+      },
+      {
+        id: '1244wqw',
+        name: 'Camilla home Lipa',
+        rating: 4,
+        totalRated: 40,
+        type: ['Apartment'],
+        reviews: [],
+        mainImage: '/assets/image-1.jpg',
+        contact: ['Contact 9', 'Contact 10'],
+        address: 'Lipa City, PH',
+        images: {
+          front: 'front5.jpg',
+          back: 'back5.jpg',
+          interior: 'interior5.jpg',
+          top: 'top5.jpg'
+        },
+        category: 'for-rent',
+        price: {
+          amount: 8000,
+          type: 'month'
+        }
+      },
+      {
+        id: '1244wqwq323',
+        name: 'Camilla home Cavite',
+        rating: 4,
+        totalRated: 40,
+        type: ['Apartment'],
+        reviews: [],
+        mainImage: '/assets/image-1.jpg',
+        contact: ['Contact 9', 'Contact 10'],
+        address: 'Cavite, PH',
+        images: {
+          front: 'front5.jpg',
+          back: 'back5.jpg',
+          interior: 'interior5.jpg',
+          top: 'top5.jpg'
+        },
+        category: 'for-rent',
+        price: {
+          amount: 8000,
+          type: 'month'
+        }
+      }
+    ]
+  },
+  {
+    id: '1234ss44dsd434ssasa',
+    name: 'DMCI Homes',
+    coverImage: '/assets/dmci-homes-cover.jpg',
+    properties: [
+      {
+        id: '1244323',
+        name: 'Light Residences',
+        rating: 4,
+        totalRated: 40,
+        type: ['Apartment'],
+        reviews: [],
+        mainImage: '/assets/image-2.jpg',
+        contact: ['Contact 9', 'Contact 10'],
+        address: 'Lipa City, PH',
+        images: {
+          front: 'front5.jpg',
+          back: 'back5.jpg',
+          interior: 'interior5.jpg',
+          top: 'top5.jpg'
+        },
+        category: 'for-rent',
+        price: {
+          amount: 8000,
+          type: 'month'
+        }
+      },
+      {
+        id: '1244wqw',
+        name: 'Camilla home Lipa',
+        rating: 4,
+        totalRated: 40,
+        type: ['Apartment'],
+        reviews: [],
+        mainImage: '/assets/image-1.jpg',
+        contact: ['Contact 9', 'Contact 10'],
+        address: 'Lipa City, PH',
+        images: {
+          front: 'front5.jpg',
+          back: 'back5.jpg',
+          interior: 'interior5.jpg',
+          top: 'top5.jpg'
+        },
+        category: 'for-rent',
+        price: {
+          amount: 8000,
+          type: 'month'
+        }
+      }
+    ]
+  },
+  {
+    id: '1234ss44dsd434ssasa',
+    name: 'Federal Land',
+    coverImage: '/assets/federal-land-cover.jpg',
+    properties: [
+      {
+        id: '1244323',
+        name: 'Light Residences',
+        rating: 4,
+        totalRated: 40,
+        type: ['Apartment'],
+        reviews: [],
+        mainImage: '/assets/image-2.jpg',
+        contact: ['Contact 9', 'Contact 10'],
+        address: 'Lipa City, PH',
+        images: {
+          front: 'front5.jpg',
+          back: 'back5.jpg',
+          interior: 'interior5.jpg',
+          top: 'top5.jpg'
+        },
+        category: 'for-rent',
+        price: {
+          amount: 8000,
+          type: 'month'
+        }
+      },
+      {
+        id: '1244wqw',
+        name: 'Camilla home Lipa',
+        rating: 4,
+        totalRated: 40,
+        type: ['Apartment'],
+        reviews: [],
+        mainImage: '/assets/image-1.jpg',
+        contact: ['Contact 9', 'Contact 10'],
+        address: 'Lipa City, PH',
+        images: {
+          front: 'front5.jpg',
+          back: 'back5.jpg',
+          interior: 'interior5.jpg',
+          top: 'top5.jpg'
+        },
+        category: 'for-rent',
+        price: {
+          amount: 8000,
+          type: 'month'
+        }
+      }
+    ]
+  },
+  {
+    id: '1234ss44dsd434ssasa',
+    name: 'Robinsons Land Corp.',
+    coverImage: '/assets/robinsons-land-corp.jpg',
+    properties: [
+      {
+        id: '1244323',
+        name: 'Light Residences',
+        rating: 4,
+        totalRated: 40,
+        type: ['Apartment'],
+        reviews: [],
+        mainImage: '/assets/image-2.jpg',
+        contact: ['Contact 9', 'Contact 10'],
+        address: 'Lipa City, PH',
+        images: {
+          front: 'front5.jpg',
+          back: 'back5.jpg',
+          interior: 'interior5.jpg',
+          top: 'top5.jpg'
+        },
+        category: 'for-rent',
+        price: {
+          amount: 8000,
+          type: 'month'
+        }
+      },
+      {
+        id: '1244wqw',
+        name: 'Camilla home Lipa',
+        rating: 4,
+        totalRated: 40,
+        type: ['Apartment'],
+        reviews: [],
+        mainImage: '/assets/image-1.jpg',
+        contact: ['Contact 9', 'Contact 10'],
+        address: 'Lipa City, PH',
+        images: {
+          front: 'front5.jpg',
+          back: 'back5.jpg',
+          interior: 'interior5.jpg',
+          top: 'top5.jpg'
+        },
+        category: 'for-rent',
+        price: {
+          amount: 8000,
+          type: 'month'
+        }
+      }
+    ]
+  }
+]
