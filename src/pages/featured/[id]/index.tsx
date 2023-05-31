@@ -1,9 +1,8 @@
 import SectionWrapper from '@/components/wrappers/PageWrapper'
 import Head from 'next/head'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Box, Typography } from '@mui/material'
 import { COLORS } from '@/utils/app_constants'
-import { useRouter } from 'next/router'
 import { GetStaticPropsContext } from 'next'
 import { featuredLists } from '@/utils/tests'
 
@@ -13,10 +12,17 @@ interface PropertyDetailsPageProps {
 
 const PropertyDetailsPage = ({ featured }: PropertyDetailsPageProps ) => {
 
+  
+  useEffect(() => {
+    if (featured) {
+      document.title = `Property details - ${featured.name}`
+    }
+  }, [featured])
+
+
   return (
     <>
       <Head>
-        <title>Property details</title>
         <meta name="description" content="Your number one real estate Site in the Philippines" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -110,6 +116,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
     props: {
       featured: featuredData
     },
+
     revalidate: 10
   }
 }
