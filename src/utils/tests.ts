@@ -291,7 +291,7 @@ export const founders = [
 
 export const featuredLists = [
   {
-    id: '123444dsds',
+    id: '123444ewedsds',
     name: 'Ayala Malls',
     coverImage: '/assets/ayala-malls-cover.jpg',
     properties: [
@@ -342,7 +342,7 @@ export const featuredLists = [
     ]
   },
   {
-    id: '123444dsd434s',
+    id: '123444dsd4ee34s',
     name: 'Camella Homes',
     coverImage: '/assets/camilla-homes-cover.webp',
     properties: [
@@ -415,7 +415,7 @@ export const featuredLists = [
     ]
   },
   {
-    id: '123444dsd434s',
+    id: '123444dsd434ewews',
     name: 'SM Prime',
     coverImage: '/assets/sm-prime-cover.jpg',
     properties: [
@@ -488,7 +488,7 @@ export const featuredLists = [
     ]
   },
   {
-    id: '1234ss44dsd434ssasa',
+    id: '1234ss44dsd434ewessasa',
     name: 'Mega world',
     coverImage: '/assets/mega-world-cover.png',
     properties: [
@@ -561,7 +561,7 @@ export const featuredLists = [
     ]
   },
   {
-    id: '1234ss44dsd434ssasa',
+    id: '1234ss44dsd434ssaewesa',
     name: 'DMCI Homes',
     coverImage: '/assets/dmci-homes-cover.jpg',
     properties: [
@@ -612,7 +612,7 @@ export const featuredLists = [
     ]
   },
   {
-    id: '1234ss44dsd434ssasa',
+    id: '1234ss44dsewed434ssasa',
     name: 'Federal Land',
     coverImage: '/assets/federal-land-cover.jpg',
     properties: [
@@ -663,7 +663,7 @@ export const featuredLists = [
     ]
   },
   {
-    id: '1234ss44dsd434ssasa',
+    id: '1234ss44dsd434sseweasa',
     name: 'Robinsons Land Corp.',
     coverImage: '/assets/robinsons-land-corp.jpg',
     properties: [

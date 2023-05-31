@@ -1,14 +1,28 @@
 import SectionWrapper from '@/components/wrappers/PageWrapper'
 import Head from 'next/head'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Box, Typography } from '@mui/material'
 import { COLORS } from '@/utils/app_constants'
+import { GetStaticPropsContext } from 'next'
+import { featuredLists } from '@/utils/tests'
 
-const PropertyDetailsPage = () => {
+interface PropertyDetailsPageProps {
+  featured: any
+}
+
+const PropertyDetailsPage = ({ featured }: PropertyDetailsPageProps ) => {
+
+  
+  useEffect(() => {
+    if (featured) {
+      document.title = `Property details - ${featured.name}`
+    }
+  }, [featured])
+
+
   return (
     <>
       <Head>
-        <title>Property details</title>
         <meta name="description" content="Your number one real estate Site in the Philippines" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -37,7 +51,7 @@ const PropertyDetailsPage = () => {
                 color: COLORS.BLACK,
               }}
             >
-              Property name
+              {featured.name}
             </Typography>
           </Box>
           <Box
@@ -72,3 +86,37 @@ const PropertyDetailsPage = () => {
 }
 
 export default PropertyDetailsPage
+
+export async function getStaticPaths() {
+
+  const featuredPaths = featuredLists.map((featuredData) => { 
+    return { params: { id: featuredData.id.toString()} }
+  })
+
+  return {
+    paths: featuredPaths,
+    fallback: false
+  }
+}
+
+export async function getStaticProps(context: GetStaticPropsContext) {
+  const { params } = context
+  const id = params?.id as string
+
+  const featuredData = featuredLists.find((featuredData) => id === featuredData.id)
+
+ if (!featuredData) {
+  return {
+    redirect: {
+      destination: '/featured'
+    }
+  }
+ }
+  return {
+    props: {
+      featured: featuredData
+    },
+
+    revalidate: 10
+  }
+}
