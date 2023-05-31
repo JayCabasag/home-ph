@@ -15,9 +15,9 @@ import { COLORS, PropertyCategory } from "@/utils/app_constants";
 import Link from "next/link";
 
 interface FeaturedSwiperProps {
-    properties: any
+  featuredLists: any
 }
-const FeaturedSwiper = ({ properties }: FeaturedSwiperProps ) => {
+const FeaturedSwiper = ({ featuredLists }: FeaturedSwiperProps ) => {
 
   return (
     <>
@@ -36,15 +36,11 @@ const FeaturedSwiper = ({ properties }: FeaturedSwiperProps ) => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        {properties.map((property: any, index: number) => {
-
-            const propertyCategory = property.category
-            const isForRent = propertyCategory === PropertyCategory.FOR_RENT
-            const isForSale = propertyCategory === PropertyCategory.FOR_SALE
+        {featuredLists.map((featuredList: any, index: number) => {
 
             return (
                 <SwiperSlide key={index}>
-                    <Link href={`/featured/${property.id}`} style={{ color: COLORS.BLACK }}>
+                    <Link href={`/featured/${featuredList.id}`} style={{ color: COLORS.BLACK }}>
                       <Box
                         sx={{
                           position: 'relative', 
@@ -54,8 +50,7 @@ const FeaturedSwiper = ({ properties }: FeaturedSwiperProps ) => {
                       >
                         <Box sx={{ position: 'absolute', zIndex: 9, backgroundColor: '#FFFFFF', marginTop: { xs: '10px', sm: '10px', md: '20px', lg: '20px' }}}>
                           <Typography sx={{ padding: { xs: '10px', sm: '10px', md: '15px', lg: '15px' } }}>
-                          {isForRent && `Php ${Number(property.price.amount).toLocaleString()}/${property.price.type}`}
-                          {isForSale && `Php ${Number(property.price.amount).toLocaleString()}`}
+                          {featuredList.name}
                           </Typography>
                         </Box>
                         <Box
@@ -67,7 +62,7 @@ const FeaturedSwiper = ({ properties }: FeaturedSwiperProps ) => {
                           }}>
                               <Image
                                   fill
-                                  src={property.mainImage}
+                                  src={featuredList.coverImage}
                                   alt='option'
                               />
                         </Box>
