@@ -3,8 +3,16 @@ import Head from 'next/head'
 import React from 'react'
 import { Box, Typography } from '@mui/material'
 import { COLORS } from '@/utils/app_constants'
+import { useRouter } from 'next/router'
+import { GetStaticPropsContext } from 'next'
+import { featuredLists } from '@/utils/tests'
 
-const PropertyDetailsPage = () => {
+interface PropertyDetailsPageProps {
+  featured: any
+}
+
+const PropertyDetailsPage = ({ featured }: PropertyDetailsPageProps ) => {
+
   return (
     <>
       <Head>
@@ -37,7 +45,7 @@ const PropertyDetailsPage = () => {
                 color: COLORS.BLACK,
               }}
             >
-              Property name
+              {featured.name}
             </Typography>
           </Box>
           <Box
@@ -72,3 +80,36 @@ const PropertyDetailsPage = () => {
 }
 
 export default PropertyDetailsPage
+
+export async function getStaticPaths() {
+
+  const featuredPaths = featuredLists.map((featuredData) => { 
+    return { params: { id: featuredData.id.toString()} }
+  })
+
+  return {
+    paths: featuredPaths,
+    fallback: false
+  }
+}
+
+export async function getStaticProps(context: GetStaticPropsContext) {
+  const { params } = context
+  const id = params?.id as string
+
+  const featuredData = featuredLists.find((featuredData) => id === featuredData.id)
+
+ if (!featuredData) {
+  return {
+    redirect: {
+      destination: '/featured'
+    }
+  }
+ }
+  return {
+    props: {
+      featured: featuredData
+    },
+    revalidate: 10
+  }
+}
