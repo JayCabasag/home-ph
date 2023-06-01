@@ -14,6 +14,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
 import NavLink from '@/components/navbar/NavLink';
+import MobileNavLink from '@/components/navbar/MobileNavLink';
 
 
 interface NavbarProps {
@@ -22,7 +23,6 @@ interface NavbarProps {
 
 
 const drawerWidth = 260;
-const navItems = [{ name: 'Home', path: '/' }, { name: 'Featured', path: '/featured' }, { name: 'Properties', path: '/properties' }, { name: 'About us', path: '/about-us' }];
 
 function Navbar(props: NavbarProps) {
   const { window } = props;
@@ -51,35 +51,10 @@ function Navbar(props: NavbarProps) {
       </Box>
       <Divider />
       <List>
-        {navItems.map((item, index) => {
-          const isActive = item.path === activePath
-          return (
-            <ListItem key={index} disablePadding>
-              <Link href={item.path}>
-                <Button
-                  variant='text'
-                  disableRipple
-                  sx={{
-                    textTransform: 'capitalize',
-                    fontFamily: 'Inter',
-                    color: isActive ? COLORS.BLACK : COLORS.INACTIVE_GRAY,
-                    fontSize: { xs: '15px', sm: '15px', md: '17px', lg: '17px' },
-                    fontWeight: 500,
-                    lineHeight: '25px',
-                    textAlign: 'left',
-                    width: drawerWidth,
-                    height: '57px',
-                    ':hover': {
-                      backgroundColor: 'unset'
-                    },
-                  }}
-                >
-                  {item.name}
-                </Button>
-              </Link>
-            </ListItem>
-          )
-        })}
+        <MobileNavLink path='/' isActive={onHomePage}>Home</MobileNavLink>
+        <MobileNavLink path='/featured' isActive={onFeaturedPage}>Featured</MobileNavLink>
+        <MobileNavLink path='/properties' isActive={onPropertiesPage}>Properties</MobileNavLink>
+        <MobileNavLink path='/about-us' isActive={onAboutPage}>About us</MobileNavLink>
       </List>
     </Box>
   );
