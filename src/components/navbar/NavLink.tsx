@@ -4,19 +4,19 @@ import Link from 'next/link'
 import React from 'react'
 
 interface NavLinkProps {
-    path: string
-    isActive: boolean,
-    children: React.ReactNode
+  path: string
+  isActive: boolean,
+  children: React.ReactNode
 }
 
-const NavLink = ({path, isActive, children }: NavLinkProps) => {  
+const NavLink = ({ path, isActive, children }: NavLinkProps) => {
   return (
     <ListItem disablePadding>
-        <Link href={path}>
+      <Link href={path}>
         <Button
-            variant='text'
-            disableRipple
-            sx={{
+          variant='text'
+          disableRipple
+          sx={{
             textTransform: 'capitalize',
             fontFamily: 'Inter',
             color: isActive ? COLORS.BLACK : COLORS.INACTIVE_GRAY,
@@ -27,13 +27,13 @@ const NavLink = ({path, isActive, children }: NavLinkProps) => {
             width: { xs: '40px', sm: '40px', md: '95px', lg: '157px' },
             height: 'auto',
             ':hover': {
-                backgroundColor: 'unset'
+              backgroundColor: 'unset'
             },
-            }}
+          }}
         >
-           {children} 
+          {children}
         </Button>
-        </Link>
+      </Link>
     </ListItem>
   )
 }
