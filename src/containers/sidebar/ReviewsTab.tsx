@@ -24,7 +24,7 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   },
 }));
 
-const ReviewsTab = ({ property, totalStarRatings } : ReviewsTabProps ) => {
+const ReviewsTab = ({ property, totalStarRatings }: ReviewsTabProps) => {
   return (
     <Box>
       <Box
@@ -42,18 +42,18 @@ const ReviewsTab = ({ property, totalStarRatings } : ReviewsTabProps ) => {
             {ratingGraph.map((rating, index) => {
               return (
                 <ListItem key={index} sx={{ display: 'flex', gap: '25px', minWidth: 180 }}>
-                <Typography
-                  sx={{
-                    fontFamily: 'Inter',
-                    fontSize: { xs: '14px', sm: '14px', md: '16px', lg: '16px' },
-                    fontWeight: 400,
-                    lineHeight: '20px',
-                    letterSpacing: '0em',
-                    textAlign: 'left',
-                  }}
-                >{rating.star}</Typography>
-                <BorderLinearProgress variant="determinate" value={rating.value} sx={{ width: { xs: 180, sm: 220, md: 220, lg: 250 } }}/>
-              </ListItem>
+                  <Typography
+                    sx={{
+                      fontFamily: 'Inter',
+                      fontSize: { xs: '14px', sm: '14px', md: '16px', lg: '16px' },
+                      fontWeight: 400,
+                      lineHeight: '20px',
+                      letterSpacing: '0em',
+                      textAlign: 'left',
+                    }}
+                  >{rating.star}</Typography>
+                  <BorderLinearProgress variant="determinate" value={rating.value} sx={{ width: { xs: 180, sm: 220, md: 220, lg: 250 } }} />
+                </ListItem>
               )
             })}
           </List>
@@ -80,37 +80,37 @@ const ReviewsTab = ({ property, totalStarRatings } : ReviewsTabProps ) => {
             {property.rating}
           </Typography>
           <Box sx={{ display: 'flex', gap: '4px' }}>
-                {totalStarRatings.map((totalStarRating, index) => {
-                  if (totalStarRating >= 1) {
-                    return (
-                    <Box sx={{ position: 'relative', overflow: 'hidden', height: '15px', width: '15px'}} key={index}>
-                        <Image
-                            fill
-                            src='/assets/yellow-star.svg'
-                            alt='rating-star'
-                        />
-                    </Box>)
-                  }
-                  return (
-                    <Box sx={{ position: 'relative', overflow: 'hidden', height: '15px', width: '15px'}} key={index}>
-                        <Box sx={{ height: '15px', width: '15px',backgroundColor: '#FFFFFF', position: 'absolute', zIndex: 3, marginLeft: '7px'}}></Box>
-                        <Box sx={{ position: 'relative', overflow: 'hidden', height: '15px', width: '15px'}} key={index}>
-                            <Image
-                                fill
-                                src='/assets/yellow-star.svg'
-                                alt='rating-star'
-                                style={{ zIndex: 2 }}
-                            />
-                        </Box>
-                    </Box>
-                    )
-                })}
-            </Box>
-            <Typography
-              sx={{
-                fontSize: { xs: '14px', sm: '14px', md: '16px', lg: '16px' },
-              }}
-            >
+            {totalStarRatings.map((totalStarRating, index) => {
+              if (totalStarRating >= 1) {
+                return (
+                  <Box sx={{ position: 'relative', overflow: 'hidden', height: '15px', width: '15px' }} key={index}>
+                    <Image
+                      fill
+                      src='/assets/yellow-star.svg'
+                      alt='rating-star'
+                    />
+                  </Box>)
+              }
+              return (
+                <Box sx={{ position: 'relative', overflow: 'hidden', height: '15px', width: '15px' }} key={index}>
+                  <Box sx={{ height: '15px', width: '15px', backgroundColor: '#FFFFFF', position: 'absolute', zIndex: 3, marginLeft: '7px' }}></Box>
+                  <Box sx={{ position: 'relative', overflow: 'hidden', height: '15px', width: '15px' }} key={index}>
+                    <Image
+                      fill
+                      src='/assets/yellow-star.svg'
+                      alt='rating-star'
+                      style={{ zIndex: 2 }}
+                    />
+                  </Box>
+                </Box>
+              )
+            })}
+          </Box>
+          <Typography
+            sx={{
+              fontSize: { xs: '14px', sm: '14px', md: '16px', lg: '16px' },
+            }}
+          >
             ({property.totalRated})
           </Typography>
         </Box>
@@ -122,7 +122,7 @@ const ReviewsTab = ({ property, totalStarRatings } : ReviewsTabProps ) => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          paddingY:  { xs: '20px', sm: '20px', md: '25px', lg: '25px' }
+          paddingY: { xs: '20px', sm: '20px', md: '25px', lg: '25px' }
         }}
       >
         <Button
@@ -148,7 +148,7 @@ const ReviewsTab = ({ property, totalStarRatings } : ReviewsTabProps ) => {
         }}
       >
         {comments.map((comment, index) => {
-          return <ReviewCard comment={comment} key={index}/>
+          return <ReviewCard comment={comment} key={index} />
         })}
       </Box>
     </Box>

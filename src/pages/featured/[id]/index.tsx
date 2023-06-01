@@ -11,7 +11,7 @@ interface PropertyDetailsPageProps {
   featured: any
 }
 
-const PropertyDetailsPage = ({ featured }: PropertyDetailsPageProps ) => {
+const PropertyDetailsPage = ({ featured }: PropertyDetailsPageProps) => {
   useEffect(() => {
     if (featured) {
       document.title = `Property details - ${featured.name}`
@@ -31,8 +31,8 @@ const PropertyDetailsPage = ({ featured }: PropertyDetailsPageProps ) => {
         <Box
           sx={{
             padding: { xs: '0', sm: '0', md: '20px 0', lg: '20px 0' },
-            width: '100%', 
-            display: 'flex', 
+            width: '100%',
+            display: 'flex',
             flexDirection: 'column',
             paddingX: { xs: '0px', sm: '0px', md: '60px', lg: '115px' },
             position: 'relative',
@@ -58,10 +58,10 @@ const PropertyDetailsPage = ({ featured }: PropertyDetailsPageProps ) => {
               paddingX: { xs: '15px', sm: '15px', md: '0px', lg: '0px' },
             }}
           >
-            <Box sx={{marginTop: '33px', gap: '15px', display: 'flex', alignItems: 'center' }}>
+            <Box sx={{ marginTop: '33px', gap: '15px', display: 'flex', alignItems: 'center' }}>
               <Box
                 sx={{
-                  minWidth:  { xs: '40px', sm: '40px', md: '60px', lg: '70px' },
+                  minWidth: { xs: '40px', sm: '40px', md: '60px', lg: '70px' },
                   height: { xs: '40px', sm: '40px', md: '60px', lg: '70px' },
                   position: 'relative',
                   overflow: 'hidden'
@@ -73,8 +73,8 @@ const PropertyDetailsPage = ({ featured }: PropertyDetailsPageProps ) => {
                   alt={featured.name}
                 />
               </Box>
-             <Box  sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <Typography sx={{
+              <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <Typography sx={{
                   color: color,
                   fontFamily: 'Inter',
                   fontSize: { xs: '15px', sm: '15px', md: '20px', lg: '20px' },
@@ -86,16 +86,16 @@ const PropertyDetailsPage = ({ featured }: PropertyDetailsPageProps ) => {
                 }}>
                   {featured.title} At {featured.location}
                 </Typography>
-                <Typography 
-                sx={{
-                  color: color,
-                  fontFamily: 'Inter',
-                  fontSize: '14px',
-                  fontWeight: 400,
-                  lineHeight: '17px',
-                  textAlign: 'left',
-                  marginTop: '5px',
-                }}>
+                <Typography
+                  sx={{
+                    color: color,
+                    fontFamily: 'Inter',
+                    fontSize: '14px',
+                    fontWeight: 400,
+                    lineHeight: '17px',
+                    textAlign: 'left',
+                    marginTop: '5px',
+                  }}>
                   {featured.subTitle}
                 </Typography>
               </Box>
@@ -119,8 +119,8 @@ export default PropertyDetailsPage
 
 export async function getStaticPaths() {
 
-  const featuredPaths = featuredLists.map((featuredData) => { 
-    return { params: { id: featuredData.id.toString()} }
+  const featuredPaths = featuredLists.map((featuredData) => {
+    return { params: { id: featuredData.id.toString() } }
   })
 
   return {
@@ -135,13 +135,13 @@ export async function getStaticProps(context: GetStaticPropsContext) {
 
   const featuredData = featuredLists.find((featuredData) => id === featuredData.id)
 
- if (!featuredData) {
-  return {
-    redirect: {
-      destination: '/featured'
+  if (!featuredData) {
+    return {
+      redirect: {
+        destination: '/featured'
+      }
     }
   }
- }
   return {
     props: {
       featured: featuredData

@@ -17,7 +17,7 @@ import Link from "next/link";
 interface FeaturedSwiperProps {
   featuredLists: any
 }
-const FeaturedSwiper = ({ featuredLists }: FeaturedSwiperProps ) => {
+const FeaturedSwiper = ({ featuredLists }: FeaturedSwiperProps) => {
 
   return (
     <>
@@ -38,38 +38,38 @@ const FeaturedSwiper = ({ featuredLists }: FeaturedSwiperProps ) => {
       >
         {featuredLists.map((featuredList: any, index: number) => {
 
-            return (
-                <SwiperSlide key={index}>
-                    <Link href={`/featured/${featuredList.id}`} style={{ color: COLORS.BLACK }}>
-                      <Box
-                        sx={{
-                          position: 'relative', 
-                          height: '100%', 
-                          width: '100%', 
-                        }}
-                      >
-                        <Box sx={{ position: 'absolute', zIndex: 9, backgroundColor: '#FFFFFF', marginTop: { xs: '10px', sm: '10px', md: '20px', lg: '20px' }}}>
-                          <Typography sx={{ padding: { xs: '10px', sm: '10px', md: '15px', lg: '15px' } }}>
-                          {featuredList.name}
-                          </Typography>
-                        </Box>
-                        <Box
-                          sx={{ 
-                          position: 'relative', 
-                          overflow: 'hidden', 
-                          height: '100%', 
-                          width: '100%', 
-                          }}>
-                              <Image
-                                  fill
-                                  src={featuredList.coverImage}
-                                  alt='option'
-                              />
-                        </Box>
-                      </Box>
-                    </Link>
-                </SwiperSlide>
-            )
+          return (
+            <SwiperSlide key={index}>
+              <Link href={`/featured/${featuredList.id}`} style={{ color: COLORS.BLACK }}>
+                <Box
+                  sx={{
+                    position: 'relative',
+                    height: '100%',
+                    width: '100%',
+                  }}
+                >
+                  <Box sx={{ position: 'absolute', zIndex: 9, backgroundColor: '#FFFFFF', marginTop: { xs: '10px', sm: '10px', md: '20px', lg: '20px' } }}>
+                    <Typography sx={{ padding: { xs: '10px', sm: '10px', md: '15px', lg: '15px' } }}>
+                      {featuredList.name}
+                    </Typography>
+                  </Box>
+                  <Box
+                    sx={{
+                      position: 'relative',
+                      overflow: 'hidden',
+                      height: '100%',
+                      width: '100%',
+                    }}>
+                    <Image
+                      fill
+                      src={featuredList.coverImage}
+                      alt='option'
+                    />
+                  </Box>
+                </Box>
+              </Link>
+            </SwiperSlide>
+          )
         })}
       </Swiper>
     </>

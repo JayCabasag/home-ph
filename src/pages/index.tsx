@@ -107,7 +107,7 @@ export default function Home() {
         <Box
           sx={{
             width: { xs: '100%', md: '50%' },
-            height: { xs: 'calc(100vh - 200px)',sm: 'calc(100vh - 200px)', md: `calc(100vh - ${MD_NAVBAR_HEIGHT})`, lg: `calc(100vh - ${MD_NAVBAR_HEIGHT})` },
+            height: { xs: 'calc(100vh - 200px)', sm: 'calc(100vh - 200px)', md: `calc(100vh - ${MD_NAVBAR_HEIGHT})`, lg: `calc(100vh - ${MD_NAVBAR_HEIGHT})` },
             position: 'relative', // Set the Box position to relative
             overflow: 'hidden' // Hide any overflow from the Image
           }}

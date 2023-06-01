@@ -13,16 +13,16 @@ interface MainLayoutProps {
 export default function MainLayout(props: MainLayoutProps) {
   return (
     <Fade in={true} timeout={300}>
-    <Box sx={{ display: 'flex' }}>
-      <Navbar  />
-      <Box component="main" width={'100%'}>
-        <Toolbar sx={{
-            height: { xs: XS_NAVBAR_HEIGHT, md: MD_NAVBAR_HEIGHT},
-        }}/>
-        {props.children}
-        <Footer />
+      <Box sx={{ display: 'flex' }}>
+        <Navbar />
+        <Box component="main" width={'100%'}>
+          <Toolbar sx={{
+            height: { xs: XS_NAVBAR_HEIGHT, md: MD_NAVBAR_HEIGHT },
+          }} />
+          {props.children}
+          <Footer />
+        </Box>
       </Box>
-    </Box>
     </Fade>
   );
 }

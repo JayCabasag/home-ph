@@ -22,17 +22,17 @@ const FeaturedPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box
-            sx={{
-              width: '100%',
-              padding: { xs: '0', sm: '0', md: '20px 0', lg: '20px 0' },
-              height: { xs: '250px', sm: '250px', md: '450px', lg: '500px' },
-              paddingX: { xs: '0px', sm: '0px', md: '90px', lg: '90px' },
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}
-          >
-        <FeaturedSwiper featuredLists={featuredProperties}/>
+        sx={{
+          width: '100%',
+          padding: { xs: '0', sm: '0', md: '20px 0', lg: '20px 0' },
+          height: { xs: '250px', sm: '250px', md: '450px', lg: '500px' },
+          paddingX: { xs: '0px', sm: '0px', md: '90px', lg: '90px' },
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <FeaturedSwiper featuredLists={featuredProperties} />
       </Box>
       <SectionWrapper heightAuto>
         <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
