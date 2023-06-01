@@ -34,7 +34,7 @@ const PropertyDetailsPage = ({ featured }: PropertyDetailsPageProps) => {
             width: '100%',
             display: 'flex',
             flexDirection: 'column',
-            paddingX: { xs: '0px', sm: '0px', md: '60px', lg: '115px' },
+            paddingX: { xs: '0px', sm: '0px', md: '90px', lg: '90px' },
             position: 'relative',
             backgroundColor: COLORS.WHITE
           }}>
