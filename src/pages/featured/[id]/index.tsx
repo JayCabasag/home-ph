@@ -5,20 +5,20 @@ import { Box, Typography } from '@mui/material'
 import { COLORS } from '@/utils/app_constants'
 import { GetStaticPropsContext } from 'next'
 import { featuredLists } from '@/utils/tests'
+import Image from 'next/image'
 
 interface PropertyDetailsPageProps {
   featured: any
 }
 
 const PropertyDetailsPage = ({ featured }: PropertyDetailsPageProps ) => {
-
-  
   useEffect(() => {
     if (featured) {
       document.title = `Property details - ${featured.name}`
     }
   }, [featured])
 
+  const color = featured?.mainColor ?? COLORS.DIRTY_WHITE
 
   return (
     <>
@@ -27,59 +27,89 @@ const PropertyDetailsPage = ({ featured }: PropertyDetailsPageProps ) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <SectionWrapper heightAuto>
-        <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
+      <SectionWrapper heightAuto disabledGutters>
+        <Box
+          sx={{
+            padding: { xs: '0', sm: '0', md: '20px 0', lg: '20px 0' },
+            width: '100%', 
+            display: 'flex', 
+            flexDirection: 'column',
+            paddingX: { xs: '0px', sm: '0px', md: '60px', lg: '115px' },
+            position: 'relative',
+            backgroundColor: COLORS.WHITE
+          }}>
           <Box
             sx={{
               width: '100%',
-              padding: '20px 0',
-              height: 'max-content',
-              paddingLeft: { sm: '0px', md: '90px' },
-              paddingRight: { sm: '0px', md: '90px' },
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between'
+              height: { xs: '250px', sm: '250px', md: '450px', lg: '500px' },
+              position: 'relative',
+              overflow: 'hidden'
             }}
           >
-            <Typography
-              sx={{
-                fontFamily: 'Inter',
-                fontStyle: 'normal',
-                fontWeight: 600,
-                fontSize: { xs: '30px', md: '50px' },
-                lineHeight: { xs: '30px', md: '50px' },
-                color: COLORS.BLACK,
-              }}
-            >
-              {featured.name}
-            </Typography>
+            <Image
+              src={featured.coverImage}
+              fill
+              alt={featured.name}
+            />
           </Box>
+
           <Box
             sx={{
-              width: '100%',
-              padding: '20px 0',
-              height: 'max-content',
-              paddingLeft: { sm: '0px', md: '90px' },
-              paddingRight: { sm: '0px', md: '90px' },
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between'
+              paddingX: { xs: '15px', sm: '15px', md: '0px', lg: '0px' },
             }}
           >
-            <Typography
+            <Box sx={{marginTop: '33px', gap: '15px', display: 'flex', alignItems: 'center' }}>
+              <Box
+                sx={{
+                  minWidth:  { xs: '40px', sm: '40px', md: '60px', lg: '70px' },
+                  height: { xs: '40px', sm: '40px', md: '60px', lg: '70px' },
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}
+              >
+                <Image
+                  src={featured.logo}
+                  fill
+                  alt={featured.name}
+                />
+              </Box>
+             <Box  sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <Typography sx={{
+                  color: color,
+                  fontFamily: 'Inter',
+                  fontSize: { xs: '15px', sm: '15px', md: '20px', lg: '20px' },
+                  fontWeight: 600,
+                  lineHeight: '24px',
+                  letterSpacing: '0em',
+                  textAlign: 'left',
+                  textTransform: 'uppercase'
+                }}>
+                  {featured.title} At {featured.location}
+                </Typography>
+                <Typography 
+                sx={{
+                  color: color,
+                  fontFamily: 'Inter',
+                  fontSize: '14px',
+                  fontWeight: 400,
+                  lineHeight: '17px',
+                  textAlign: 'left',
+                  marginTop: '5px',
+                }}>
+                  {featured.subTitle}
+                </Typography>
+              </Box>
+            </Box>
+            <Box
               sx={{
-                fontFamily: 'Inter',
-                fontStyle: 'normal',
-                fontWeight: 600,
-                fontSize: { xs: '20px', md: '30px' },
-                lineHeight: { xs: '20px', md: '30px' },
-                color: COLORS.BLACK,
+                marginTop: '33px'
               }}
             >
-              Comming soon...
-            </Typography>
+
+            </Box>
           </Box>
         </Box>
+
       </SectionWrapper>
     </>
   )

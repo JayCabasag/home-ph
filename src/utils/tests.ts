@@ -293,6 +293,12 @@ export const featuredLists = [
   {
     id: '123444ewedsds',
     name: 'Ayala Malls',
+    mainColor: '#EB7137',
+    subColor: '#F5B79B',
+    logo: '/assets/ayala-mall-logo.png',
+    location: 'Ayala Malls Alabang',
+    title: 'HOUSE AND LOT FOR SALE IN Alabang',
+    subTitle: 'Cammella Home Series',
     coverImage: '/assets/ayala-malls-cover.jpg',
     properties: [
       {
@@ -344,6 +350,12 @@ export const featuredLists = [
   {
     id: '123444dsd4ee34s',
     name: 'Camella Homes',
+    mainColor: '#233624',
+    subColor: '#2C5B26',
+    location: 'Camella Homes Santiago',
+    logo: '/assets/camella-homes-logo.png',
+    title: 'HOUSE AND LOT FOR SALE IN Santiago City',
+    subTitle: 'Cammella Home Series',
     coverImage: '/assets/camilla-homes-cover.webp',
     properties: [
       {
@@ -370,7 +382,7 @@ export const featuredLists = [
       },
       {
         id: '1244wqw',
-        name: 'Camilla home Lipa',
+        name: 'Camella home Lipa',
         rating: 4,
         totalRated: 40,
         type: ['Apartment'],
@@ -417,6 +429,12 @@ export const featuredLists = [
   {
     id: '123444dsd434ewews',
     name: 'SM Prime',
+    mainColor: '#1E398D',
+    subColor: '#2070C1',
+    location: 'SM Prime Cebu',
+    logo: '/assets/sm-prime-logo-2.png',
+    title: 'HOUSE AND LOT FOR SALE IN Cebu City, Visayas',
+    subTitle: 'Cammella Home Series',
     coverImage: '/assets/sm-prime-cover.jpg',
     properties: [
       {
@@ -490,6 +508,12 @@ export const featuredLists = [
   {
     id: '1234ss44dsd434ewessasa',
     name: 'Mega world',
+    mainColor: '#1674C1',
+    subColor: '#65A3D6',
+    logo: '/assets/megaworld-logo.png',
+    location: 'Mega World Metro Manila',
+    title: 'HOUSE AND LOT FOR SALE IN Metro Manila',
+    subTitle: 'Cammella Home Series',
     coverImage: '/assets/mega-world-cover.png',
     properties: [
       {
@@ -563,6 +587,12 @@ export const featuredLists = [
   {
     id: '1234ss44dsd434ssaewesa',
     name: 'DMCI Homes',
+    mainColor: '#041B4D',
+    subColor: '#01A71C',
+    location: 'DMCI Home Taguig',
+    title: 'HOUSE AND LOT FOR SALE IN Taguig CITY',
+    subTitle: 'Cammella Home Series',
+    logo: '/assets/dmci-homes-logo.webp',
     coverImage: '/assets/dmci-homes-cover.jpg',
     properties: [
       {
@@ -614,7 +644,14 @@ export const featuredLists = [
   {
     id: '1234ss44dsewed434ssasa',
     name: 'Federal Land',
+    mainColor: '#041B4D',
+    subColor: '#01A71C',
+    location: 'Federal Land Las Piñas City',
+    logo: '/assets/federal-land-logo.png',
     coverImage: '/assets/federal-land-cover.jpg',
+    title: 'HOUSE AND LOT FOR SALE IN Las Piñas City, Metro Manila',
+    subTitle: 'Cammella Home Series',
+    description: '',
     properties: [
       {
         id: '1244323',
@@ -665,6 +702,12 @@ export const featuredLists = [
   {
     id: '1234ss44dsd434sseweasa',
     name: 'Robinsons Land Corp.',
+    mainColor: '#3371AB',
+    subColor: '#E14E5C',
+    logo: '/assets/robinsons-land0corp-logo.png',
+    title: 'HOUSE AND LOT FOR SALE IN Cavite City, Cavite',
+    subTitle: 'Cammella Home Series',
+    location: 'Robinsons States Cavite',
     coverImage: '/assets/robinsons-land-corp.jpg',
     properties: [
       {

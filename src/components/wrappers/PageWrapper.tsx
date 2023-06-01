@@ -7,10 +7,11 @@ const inter = Inter({ subsets: ['latin'] })
 
 interface SectionWrapperProps {
     children: React.ReactNode,
-    heightAuto?: boolean
+    heightAuto?: boolean,
+    disabledGutters?: boolean
 }
 
-const  SectionWrapper = ({ children, heightAuto = false }:  SectionWrapperProps ) => {
+const  SectionWrapper = ({ children, heightAuto = false, disabledGutters = false}:  SectionWrapperProps ) => {
 
   const isMobileScreen = useMediaQuery('(max-width: 768px)');
 
@@ -26,7 +27,7 @@ const  SectionWrapper = ({ children, heightAuto = false }:  SectionWrapperProps 
           position: 'relative'
         }}
         maxWidth={false}
-        disableGutters={!isMobileScreen}
+        disableGutters={!isMobileScreen || disabledGutters}
     >
     {children}
     </Container>
