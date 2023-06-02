@@ -13,7 +13,9 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import NavLink from '@/components/navbar/NavLink';
 import MobileNavLink from '@/components/navbar/MobileNavLink';
-
+import { UserContext } from '@/auth/FirebaseAuthProvider';
+import SignIn from '@/components/dialogs/SignIn';
+import SignUp from '@/components/dialogs/SignUp';
 
 interface NavbarProps {
   window?: () => Window;
@@ -23,6 +25,19 @@ interface NavbarProps {
 const drawerWidth = 260;
 
 function Navbar(props: NavbarProps) {
+  const auth = React.useContext(UserContext)
+
+  const [showSignInDialog, setShowSignInDialog] = React.useState<boolean>(false)
+  const [showSignUpDialog, setShowSignUpDialog] = React.useState<boolean>(false)
+
+  const handleCloseSignInDialog = () => {
+    setShowSignInDialog(false)
+  }
+
+  const handleCloseSignUpDialog = () => {
+    setShowSignUpDialog(false)
+  }
+
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const router = useRouter()
@@ -61,6 +76,8 @@ function Navbar(props: NavbarProps) {
 
   return (
     <Box>
+      <SignIn open={showSignInDialog} onClose={handleCloseSignInDialog} />
+      <SignUp open={showSignUpDialog} onClose={handleCloseSignUpDialog} />
       <Box component="nav" zIndex={9999}>
         <Drawer
           disablePortal
@@ -145,6 +162,7 @@ function Navbar(props: NavbarProps) {
             <Button
               variant='text'
               disableRipple
+              onClick={() => setShowSignUpDialog(true)}
               sx={{
                 textTransform: 'capitalize',
                 fontFamily: 'Inter',
@@ -164,6 +182,7 @@ function Navbar(props: NavbarProps) {
             </Button>
             <Button
               variant='contained'
+              onClick={() => setShowSignInDialog(true)}
               sx={{
                 textTransform: 'capitalize',
                 fontFamily: 'Inter',
