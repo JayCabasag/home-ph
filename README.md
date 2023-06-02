@@ -1,4 +1,4 @@
-# Real Estate Web Application
+# Home PH
 
 This repository contains a web application developed using Next.js, Material-UI (MUI), and Firebase as the backend. The web app provides a platform similar to a social media platform, where users can explore real estate listings that are currently available for sale or rent.
 
