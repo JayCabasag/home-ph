@@ -10,10 +10,11 @@ import { Close } from '@mui/icons-material';
 export interface SignInProps {
     open: boolean;
     onClose: () => void;
+    goToSignUp: () => void;
 }
 
 export default function SignIn(props: SignInProps) {
-    const { onClose, open } = props;
+    const { onClose, open, goToSignUp } = props;
     const isMobileScreen = useMediaQuery('(max-width: 768px)');
 
     return (
@@ -82,7 +83,7 @@ export default function SignIn(props: SignInProps) {
                 size='small'
                 sx={{
                     marginTop: '6px',
-                    width: { xs: '100%', sm: '100%', md: '294px', lg: '294px' }
+                    width: { xs: '100%', sm: '100%', md: '320px', lg: '320px' },
                 }}
                 inputProps={{
                     style: {
@@ -109,7 +110,7 @@ export default function SignIn(props: SignInProps) {
                 size='small'
                 sx={{
                     marginTop: '6px',
-                    width: { xs: '100%', sm: '100%', md: '294px', lg: '294px' }
+                    width: { xs: '100%', sm: '100%', md: '320px', lg: '320px' },
                 }}
                 inputProps={{
                     style: {
@@ -161,7 +162,7 @@ export default function SignIn(props: SignInProps) {
                 sx={{
                     marginTop: '10px',
                     height: '47px',
-                    width: { xs: '100%', sm: '100%', md: '294px', lg: '294px' },
+                    width: { xs: '100%', sm: '100%', md: '320px', lg: '320px' },
                     borderRadius: '7px',
                     textTransform: 'capitalize',
                     marginBottom: '10px',
@@ -200,7 +201,7 @@ export default function SignIn(props: SignInProps) {
                 sx={{
                     marginTop: '10px',
                     height: '47px',
-                    width: { xs: '100%', sm: '100%', md: '294px', lg: '294px' },
+                    width: { xs: '100%', sm: '100%', md: '320px', lg: '320px' },
                     borderRadius: '7px',
                     textTransform: 'capitalize'
                 }}
@@ -226,6 +227,8 @@ export default function SignIn(props: SignInProps) {
                         textDecoration: 'underline',
                         cursor: 'pointer'
                     }}
+                    role='button'
+                    onClick={goToSignUp}
                 >
                     Sign up
                 </Typography>
