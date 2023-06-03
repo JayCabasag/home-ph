@@ -81,7 +81,7 @@ export default function SignUp(props: SignUpProps) {
                 size='small'
                 sx={{
                     marginTop: '6px',
-                    width: '294px'
+                    width: { xs: '100%', sm: '100%', md: '294px', lg: '294px' },
                 }}
                 inputProps={{
                     style: {
@@ -108,7 +108,7 @@ export default function SignUp(props: SignUpProps) {
                 size='small'
                 sx={{
                     marginTop: '6px',
-                    width: '294px'
+                    width: { xs: '100%', sm: '100%', md: '294px', lg: '294px' },
                 }}
                 inputProps={{
                     style: {
@@ -135,7 +135,7 @@ export default function SignUp(props: SignUpProps) {
                 size='small'
                 sx={{
                     marginTop: '6px',
-                    width: '294px'
+                    width: { xs: '100%', sm: '100%', md: '294px', lg: '294px' },
                 }}
                 inputProps={{
                     style: {
@@ -150,7 +150,7 @@ export default function SignUp(props: SignUpProps) {
                 sx={{
                     marginTop: '16px',
                     height: '47px',
-                    width: '294px',
+                    width: { xs: '100%', sm: '100%', md: '294px', lg: '294px' },
                     borderRadius: '7px',
                     textTransform: 'capitalize'
                 }}
