@@ -38,6 +38,16 @@ function Navbar(props: NavbarProps) {
     setShowSignUpDialog(false)
   }
 
+  const handleShowSignUp = () => {
+    setShowSignInDialog(false)
+    setShowSignUpDialog(true)
+  }
+
+  const handleShowSignIn = () => {
+    setShowSignUpDialog(false)
+    setShowSignInDialog(true)
+  }
+
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const router = useRouter()
@@ -76,8 +86,8 @@ function Navbar(props: NavbarProps) {
 
   return (
     <Box>
-      <SignIn open={showSignInDialog} onClose={handleCloseSignInDialog} />
-      <SignUp open={showSignUpDialog} onClose={handleCloseSignUpDialog} />
+      <SignIn open={showSignInDialog} onClose={handleCloseSignInDialog} goToSignUp={handleShowSignUp} />
+      <SignUp open={showSignUpDialog} onClose={handleCloseSignUpDialog} goToSignIn={handleShowSignIn} />
       <Box component="nav" zIndex={9999}>
         <Drawer
           disablePortal
