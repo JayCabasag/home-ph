@@ -60,7 +60,17 @@ const SnackbarProvider = ({ children }: SnackbarProps) => {
     return (
         <SnackbarContext.Provider value={{ showSuccessAlert, showErrorAlert }}>
             {showSnackbar && (
-                <Box sx={{ position: 'fixed', zIndex: 999999, width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '12px' }}>
+                <Box
+                    sx={{
+                        position: 'fixed',
+                        zIndex: 999999,
+                        width: '100%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        marginTop: '12px',
+                        paddingX: { xs: '15px', sm: '15px', md: '60px', lg: '115px' },
+                    }}>
                     {isSuccess && <Alert severity='success' >{alertMessage}</Alert>}
                     {isError && <Alert severity='error' >{alertMessage}</Alert>}
                 </Box>
