@@ -9,6 +9,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Head from 'next/head'
 import '@/styles/swiper/styles.css'
 import { FirebaseAuthProvider } from '@/auth/FirebaseAuthProvider'
+import SnackbarProvider from '@/components/snackbar/SnackbarProvider'
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -25,14 +26,16 @@ export default function MyApp(props: MyAppProps) {
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <FirebaseAuthProvider>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <MainLayout>
-            <Component {...pageProps} />
-          </MainLayout>
-        </ThemeProvider>
-      </FirebaseAuthProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <SnackbarProvider>
+          <FirebaseAuthProvider>
+            <MainLayout>
+              <Component {...pageProps} />
+            </MainLayout>
+          </FirebaseAuthProvider>
+        </SnackbarProvider>
+      </ThemeProvider>
     </CacheProvider>
   )
 }

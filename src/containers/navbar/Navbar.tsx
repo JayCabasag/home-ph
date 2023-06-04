@@ -26,6 +26,7 @@ const drawerWidth = 260;
 
 function Navbar(props: NavbarProps) {
   const auth = React.useContext(UserContext)
+  const user = auth.user
 
   const [showSignInDialog, setShowSignInDialog] = React.useState<boolean>(false)
   const [showSignUpDialog, setShowSignUpDialog] = React.useState<boolean>(false)
@@ -168,31 +169,52 @@ function Navbar(props: NavbarProps) {
               <NavLink path='/about-us' isActive={onAboutPage}>About us</NavLink>
             </List>
           </Box>
-          <Box sx={{ display: 'flex' }}>
-            <Button
-              variant='text'
-              disableRipple
-              onClick={() => setShowSignUpDialog(true)}
-              sx={{
-                textTransform: 'capitalize',
-                fontFamily: 'Inter',
-                color: COLORS.BLACK,
-                fontSize: { xs: '15px', sm: '15px', md: '16px', lg: '16px' },
-                fontWeight: 500,
-                lineHeight: '22px',
-                textAlign: 'left',
-                minWidth: { xs: 'max-content', sm: 'max-content', md: '157px', lg: '157px' },
-                height: { xs: '40px', sm: '40px', md: '45px' },
-                ':hover': {
-                  backgroundColor: 'unset'
-                },
-              }}
-            >
-              Sign up
-            </Button>
+          {!user && (
+            <Box sx={{ display: 'flex' }}>
+              <Button
+                variant='text'
+                disableRipple
+                onClick={() => setShowSignUpDialog(true)}
+                sx={{
+                  textTransform: 'capitalize',
+                  fontFamily: 'Inter',
+                  color: COLORS.BLACK,
+                  fontSize: { xs: '15px', sm: '15px', md: '16px', lg: '16px' },
+                  fontWeight: 500,
+                  lineHeight: '22px',
+                  textAlign: 'left',
+                  minWidth: { xs: 'max-content', sm: 'max-content', md: '157px', lg: '157px' },
+                  height: { xs: '40px', sm: '40px', md: '45px' },
+                  ':hover': {
+                    backgroundColor: 'unset'
+                  },
+                }}
+              >
+                Sign up
+              </Button>
+              <Button
+                variant='contained'
+                onClick={() => setShowSignInDialog(true)}
+                sx={{
+                  textTransform: 'capitalize',
+                  fontFamily: 'Inter',
+                  fontSize: { xs: '15px', sm: '15px', md: '16px', lg: '16px' },
+                  fontWeight: 500,
+                  lineHeight: '22px',
+                  textAlign: 'left',
+                  minWidth: { xs: 'max-content', sm: 'max-content', md: '157px', lg: '157px' },
+                  height: { xs: '40px', sm: '40px', md: '45px' },
+                  borderRadius: '15px'
+                }}
+              >
+                Sign in
+              </Button>
+            </Box>
+          )}
+          {user && (
             <Button
               variant='contained'
-              onClick={() => setShowSignInDialog(true)}
+              onClick={() => auth.signOut()}
               sx={{
                 textTransform: 'capitalize',
                 fontFamily: 'Inter',
@@ -205,9 +227,9 @@ function Navbar(props: NavbarProps) {
                 borderRadius: '15px'
               }}
             >
-              Sign in
+              Sign out
             </Button>
-          </Box>
+          )}
         </Toolbar>
       </AppBar>
     </Box>
