@@ -6,6 +6,7 @@ import { Alert, Box, IconButton, Snackbar, TextField, Typography, useMediaQuery 
 import { Close } from '@mui/icons-material';
 import { COLORS } from '@/utils/app_constants';
 import { UserContext } from '@/auth/FirebaseAuthProvider';
+import { SnackbarContext } from '../snackbar/SnackbarProvider';
 
 export interface SignUpProps {
     open: boolean;
@@ -14,10 +15,17 @@ export interface SignUpProps {
 }
 
 export default function SignUp(props: SignUpProps) {
+    const { onClose, open, goToSignIn } = props;
 
     const auth = React.useContext(UserContext)
+    const alert = React.useContext(SnackbarContext)
 
-    const { onClose, open, goToSignIn } = props;
+    React.useEffect(() => {
+        if (auth.user) {
+            return onClose()
+        }
+    }, [auth.user])
+
     const isMobileScreen = useMediaQuery('(max-width: 768px)');
     const emailRef = React.useRef<string>('')
     const passwordRef = React.useRef<string>('')
@@ -34,20 +42,21 @@ export default function SignUp(props: SignUpProps) {
         const confirmPasswordValue = confirmPasswordRef.current
 
         if (emailValue === '') {
-            return setIsErrorSignUp({ status: true, message: 'Please input your email' })
+            return alert.showErrorAlert('Please input your password')
         }
         if (passwordValue === '') {
-            return setIsErrorSignUp({ status: true, message: 'Please input your password' })
+            return alert.showErrorAlert('Please input your password')
         }
         if (confirmPasswordValue === '') {
-            return setIsErrorSignUp({ status: true, message: 'Please confirm your password' })
+            return alert.showErrorAlert('Please confirm your password')
         }
-        await auth.signUpWithEmailAndPassword(emailValue, passwordValue).then(() => {
-            onClose()
-        })
-    }
 
-    console.log(auth.isAuthenticating)
+        if (passwordValue !== confirmPasswordValue) {
+            return alert.showErrorAlert('Make sure that password and confirm password is matching')
+        }
+
+        await auth.signUpWithEmailAndPassword(emailValue, passwordValue)
+    }
 
     return (
         <Dialog

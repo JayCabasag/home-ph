@@ -3,6 +3,8 @@ import { User, UserCredential, createUserWithEmailAndPassword, signInWithEmailAn
 import React, { ReactNode, createContext, useEffect, useState } from "react";
 import { auth, db } from "./firebase-config";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { SnackbarContext } from "@/components/snackbar/SnackbarProvider";
+import { getFirebaseErrorMessage } from "@/utils/getters";
 
 export const UserContext = createContext<{
     user: User | null,
@@ -25,6 +27,7 @@ interface AuthProviderProps {
 export const FirebaseAuthProvider = ({ children }: AuthProviderProps) => {
     const [user, setUser] = useState<User | null>(null)
     const [isAuthenticating, setIsAuthenticating] = useState(false)
+    const alert = React.useContext(SnackbarContext)
 
     const addUserToDatabase = async (email: string | null | undefined, displayName: string | null | undefined) => {
         const name = displayName === null ? email : displayName
@@ -35,7 +38,7 @@ export const FirebaseAuthProvider = ({ children }: AuthProviderProps) => {
             role: 'user',
             createdAt: serverTimestamp()
         }).catch((error) => {
-
+            alert.showErrorAlert((error.toString()))
         })
         return docRef
     }
@@ -43,6 +46,7 @@ export const FirebaseAuthProvider = ({ children }: AuthProviderProps) => {
     const signOut = async () => {
         await auth.signOut().then(() => {
             setUser(null)
+            alert.showSuccessAlert("Logged out successfully")
         })
     }
 
@@ -67,11 +71,15 @@ export const FirebaseAuthProvider = ({ children }: AuthProviderProps) => {
             const currentUser = signedUpUser.user
             addUserToDatabase(currentUser?.email, currentUser?.displayName).then(() => {
                 setUser(signedUpUser.user)
+                alert.showSuccessAlert("User registered successfully")
             }).catch((error) => {
-                console.log(error)
+                const errorMessage = getFirebaseErrorMessage(error)
+                alert.showErrorAlert(errorMessage)
                 setUser(null)
             })
-        }).catch(() => {
+        }).catch((error) => {
+            const errorMessage = getFirebaseErrorMessage(error)
+            alert.showErrorAlert(errorMessage)
             setUser(null)
         }).finally(() => {
             setIsAuthenticating(false)
