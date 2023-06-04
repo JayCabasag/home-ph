@@ -42,10 +42,12 @@ export default function SignUp(props: SignUpProps) {
         if (confirmPasswordValue === '') {
             return setIsErrorSignUp({ status: true, message: 'Please confirm your password' })
         }
-        await auth.signUpWithEmailAndPassword(emailValue, passwordValue)
+        await auth.signUpWithEmailAndPassword(emailValue, passwordValue).then(() => {
+            onClose()
+        })
     }
 
-    console.log(auth.user)
+    console.log(auth.isAuthenticating)
 
     return (
         <Dialog
@@ -123,6 +125,8 @@ export default function SignUp(props: SignUpProps) {
             <TextField
                 variant='outlined'
                 size='small'
+                type='email'
+                required
                 onChange={(event) => {
                     emailRef.current = event.currentTarget.value
                 }}
@@ -151,6 +155,8 @@ export default function SignUp(props: SignUpProps) {
                 Password
             </Typography>
             <TextField
+                required
+                type='password'
                 variant='outlined'
                 size='small'
                 onChange={(event) => {
@@ -183,6 +189,8 @@ export default function SignUp(props: SignUpProps) {
             <TextField
                 variant='outlined'
                 size='small'
+                type='password'
+                required
                 onChange={(event) => {
                     confirmPasswordRef.current = event.currentTarget.value
                 }}
