@@ -96,10 +96,10 @@ const FeaturedPage = ({ featuredProperties }: FeaturedPageProps) => {
 export default FeaturedPage
 
 export const getStaticProps = () => {
-
   return {
     props: {
       featuredProperties: featuredLists
-    }
+    },
+    revalidate: 30
   }
 }
