@@ -1,17 +1,17 @@
 import Head from 'next/head'
-import { Inter } from 'next/font/google'
-import { Container, Box, Typography, Button } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import { COLORS } from '@/utils/app_constants'
 import SectionWrapper from '@/components/wrappers/PageWrapper'
 import { featuredLists, properties } from '@/utils/tests'
 import ResidentCard from '@/components/cards/ResidentCard'
 import Searcher from '@/components/search/Searcher'
 import FeaturedSwiper from '@/components/swiper/FeaturedSwiper'
-import { galleryImagesData } from '@/utils/tests'
 
-const FeaturedPage = () => {
+interface FeaturedPageProps {
+  featuredProperties: any[]
+}
 
-  const featuredProperties = featuredLists
+const FeaturedPage = ({ featuredProperties }: FeaturedPageProps) => {
 
   return (
     <>
@@ -94,3 +94,12 @@ const FeaturedPage = () => {
 }
 
 export default FeaturedPage
+
+export const getStaticProps = () => {
+
+  return {
+    props: {
+      featuredProperties: featuredLists
+    }
+  }
+}

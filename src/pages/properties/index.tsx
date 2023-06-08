@@ -7,8 +7,6 @@ import { properties } from '@/utils/tests'
 import ResidentCard from '@/components/cards/ResidentCard'
 import Searcher from '@/components/search/Searcher'
 
-const inter = Inter({ subsets: ['latin'] })
-
 const PropertiesPage = () => {
   return (
     <>
